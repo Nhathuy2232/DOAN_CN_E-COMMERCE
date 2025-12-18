@@ -33,6 +33,7 @@ declare namespace __next_route_internal_types__ {
 
   type StaticRoutes = 
     | `/`
+    | `/about`
     | `/admin/blogs`
     | `/admin/categories`
     | `/admin/coupons`
@@ -41,7 +42,9 @@ declare namespace __next_route_internal_types__ {
     | `/admin/products`
     | `/blogs`
     | `/cart`
+    | `/flash-sale`
     | `/login`
+    | `/privacy`
     | `/products`
     | `/register`
   type DynamicRoutes<T extends string = string> = 

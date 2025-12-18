@@ -33,11 +33,16 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           const response = await apiClient.getMe() as any;
           if (response.success) {
             setUser(response.data);
+          } else {
+            // Token không hợp lệ, xóa nó
+            localStorage.removeItem('accessToken');
           }
         }
       } catch (error) {
-        console.error('Failed to load user:', error);
+        // Token hết hạn hoặc không hợp lệ, xóa nó một cách im lặng
+        console.log('Token đã hết hạn hoặc không hợp lệ');
         localStorage.removeItem('accessToken');
+        setUser(null);
       } finally {
         setLoading(false);
       }

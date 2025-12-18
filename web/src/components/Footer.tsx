@@ -31,14 +31,12 @@ export function Footer() {
               VỀ CHÚNG TÔI
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="#" className="hover:text-primary-600">Giới Thiệu Cửa Hàng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Tuyển Dụng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Điều Khoản Sử Dụng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Chính Sách Bảo Mật</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Sản Phẩm Chính Hãng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Kênh Đại Lý</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Khuyến Mãi</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Blog Câu Cá</Link></li>
+              <li><Link href="/about" className="hover:text-primary-600">Giới Thiệu Cửa Hàng</Link></li>
+              <li><Link href="/privacy" className="hover:text-primary-600">Chính Sách Bảo Mật</Link></li>
+              <li><Link href="/products" className="hover:text-primary-600">Sản Phẩm Chính Hãng</Link></li>
+              <li><Link href="https://www.facebook.com/profile.php?id=61571178752304" target="_blank" rel="noopener noreferrer" className="hover:text-primary-600">Kênh Đại Lý</Link></li>
+              <li><Link href="/flash-sale" className="hover:text-primary-600">Khuyến Mãi</Link></li>
+              <li><Link href="/blogs" className="hover:text-primary-600">Blog Câu Cá</Link></li>
               <li><Link href="#" className="hover:text-primary-600">Liên Hệ</Link></li>
             </ul>
           </div>

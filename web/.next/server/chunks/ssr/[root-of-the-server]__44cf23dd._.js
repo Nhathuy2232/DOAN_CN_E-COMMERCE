@@ -181,11 +181,16 @@ function AuthProvider({ children }) {
                     const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2d$client$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["apiClient"].getMe();
                     if (response.success) {
                         setUser(response.data);
+                    } else {
+                        // Token không hợp lệ, xóa nó
+                        localStorage.removeItem('accessToken');
                     }
                 }
             } catch (error) {
-                console.error('Failed to load user:', error);
+                // Token hết hạn hoặc không hợp lệ, xóa nó một cách im lặng
+                console.log('Token đã hết hạn hoặc không hợp lệ');
                 localStorage.removeItem('accessToken');
+                setUser(null);
             } finally{
                 setLoading(false);
             }
@@ -241,7 +246,7 @@ function AuthProvider({ children }) {
         children: children
     }, void 0, false, {
         fileName: "[project]/src/hooks/useAuth.tsx",
-        lineNumber: 87,
+        lineNumber: 92,
         columnNumber: 5
     }, this);
 }
