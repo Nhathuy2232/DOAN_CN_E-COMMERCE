@@ -38,6 +38,7 @@ declare namespace __next_route_internal_types__ {
     | `/admin/categories`
     | `/admin/coupons`
     | `/admin/dashboard`
+    | `/admin/flash-sales`
     | `/admin/orders`
     | `/admin/products`
     | `/blogs`

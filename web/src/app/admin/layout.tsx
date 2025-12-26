@@ -12,6 +12,7 @@ import {
   Tag,
   FileText,
   LogOut,
+  Zap,
 } from "lucide-react";
 
 export default function AdminLayout({
@@ -40,6 +41,7 @@ export default function AdminLayout({
     { icon: FolderTree, label: "Quản lý Danh mục", href: "/admin/categories" },
     { icon: ShoppingCart, label: "Quản lý Đơn hàng", href: "/admin/orders" },
     { icon: Tag, label: "Quản lý Mã giảm giá", href: "/admin/coupons" },
+    { icon: Zap, label: "Quản lý Flash Sale", href: "/admin/flash-sales" },
     { icon: FileText, label: "Quản lý Blog", href: "/admin/blogs" },
   ];
 

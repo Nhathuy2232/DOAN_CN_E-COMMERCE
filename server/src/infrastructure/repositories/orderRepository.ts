@@ -4,7 +4,7 @@ import pool from '../database';
 export interface OrderRecord {
   id: number;
   user_id: number;
-  address_id: number;
+  address_id: number | null;
   status: 'pending' | 'paid' | 'shipped' | 'completed' | 'cancelled';
   payment_method: 'cod' | 'bank_transfer' | 'e_wallet';
   total_amount: number;
@@ -39,7 +39,7 @@ export interface OrderWithItems extends OrderRecord {
 class OrderRepository {
   async createOrder(params: {
     userId: number;
-    addressId: number;
+    addressId?: number | null;
     totalAmount: number;
     shippingFee?: number;
     paymentMethod: 'cod' | 'bank_transfer' | 'e_wallet';

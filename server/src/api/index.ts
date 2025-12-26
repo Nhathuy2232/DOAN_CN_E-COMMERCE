@@ -9,6 +9,7 @@ import blogRoutes from './blogs';
 import shippingRoutes from './shipping';
 import reviewRoutes from './reviews';
 import wishlistRoutes from './wishlist';
+import flashSaleRoutes from './flash-sales';
 
 const router = Router();
 
@@ -22,5 +23,6 @@ router.use('/blogs', blogRoutes);
 router.use('/shipping', shippingRoutes);
 router.use('/reviews', reviewRoutes);
 router.use('/wishlist', wishlistRoutes);
+router.use('/flash-sales', flashSaleRoutes);
 
 export default router;

@@ -35,8 +35,13 @@ class ApiClient {
         });
         if (!response.ok) {
             const error = await response.json().catch(()=>({
+                    success: false,
                     message: 'An error occurred'
                 }));
+            // Nếu là lỗi 401 (unauthorized), có thể xóa token
+            if (response.status === 401 && "object" !== 'undefined') {
+                localStorage.removeItem('accessToken');
+            }
             throw new Error(error.message || "HTTP ".concat(response.status));
         }
         return response.json();

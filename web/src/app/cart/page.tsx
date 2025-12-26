@@ -63,6 +63,7 @@ export default function CartPage() {
   const [shippingFee, setShippingFee] = useState<ShippingFee | null>(null);
   const [calculatingFee, setCalculatingFee] = useState(false);
   const [processingOrder, setProcessingOrder] = useState(false);
+  const [paymentMethod, setPaymentMethod] = useState<'cod' | 'bank_transfer' | 'e_wallet'>('cod');
 
   useEffect(() => {
     if (!authLoading) {
@@ -155,31 +156,59 @@ export default function CartPage() {
   };
 
   const calculateShippingFee = async () => {
+    console.log('🚚 Bắt đầu tính phí vận chuyển...');
+    console.log('- selectedDistrict:', selectedDistrict);
+    console.log('- selectedWard:', selectedWard);
+    console.log('- cartItems.length:', cartItems.length);
+
     setCalculatingFee(true);
     try {
       // Tính tổng trọng lượng (giả định mỗi sản phẩm 500g)
       const totalWeight = cartItems.reduce((sum, item) => sum + (item.quantity * 500), 0);
       const totalValue = cartItems.reduce((sum, item) => sum + (item.product_price * item.quantity), 0);
 
+      console.log('- totalWeight:', totalWeight);
+      console.log('- totalValue:', totalValue);
+
+      const requestBody = {
+        toDistrictId: selectedDistrict,
+        toWardCode: selectedWard,
+        weight: totalWeight,
+        insuranceValue: totalValue,
+      };
+
+      console.log('📤 Sending request:', requestBody);
+
       const response = await fetch('http://localhost:4000/api/shipping/calculate-fee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          to_district_id: selectedDistrict,
-          to_ward_code: selectedWard,
-          weight: totalWeight,
-          insurance_value: totalValue,
-        }),
+        body: JSON.stringify(requestBody),
       });
+
+      console.log('📥 Response status:', response.status);
 
       if (response.ok) {
         const data = await response.json();
-        setShippingFee(data.data);
+        console.log('📥 Response data:', data);
+        if (data.success && data.data) {
+          setShippingFee(data.data);
+          console.log('✅ Tính phí thành công:', data.data.total);
+        } else {
+          console.error('❌ Lỗi tính phí vận chuyển:', data.message);
+          alert('Không thể tính phí vận chuyển: ' + (data.message || 'Lỗi không xác định'));
+          setShippingFee(null);
+        }
+      } else {
+        const errorData = await response.json().catch(() => ({}));
+        console.error('❌ Lỗi tính phí vận chuyển:', errorData.message || 'Không thể tính phí');
+        alert('Không thể tính phí vận chuyển: ' + (errorData.message || 'Vui lòng kiểm tra lại thông tin địa chỉ'));
+        setShippingFee(null);
       }
     } catch (error) {
-      console.error('Error calculating shipping fee:', error);
+      console.error('❌ Error calculating shipping fee:', error);
+      alert('Lỗi kết nối: ' + error);
     } finally {
       setCalculatingFee(false);
     }
@@ -253,44 +282,67 @@ export default function CartPage() {
       alert('Vui lòng nhập địa chỉ cụ thể');
       return;
     }
+    if (!paymentMethod) {
+      alert('Vui lòng chọn phương thức thanh toán');
+      return;
+    }
 
     setProcessingOrder(true);
     try {
       const token = localStorage.getItem('accessToken');
-      
-      // Tạo đơn hàng
+      // Lấy userId từ user context nếu có
+      const userId = user?.id;
+      if (!userId) {
+        alert('Không xác định được người dùng. Vui lòng đăng nhập lại.');
+        setProcessingOrder(false);
+        return;
+      }
+      // Tạo đơn hàng giống test-order-ghn.js
+      const orderData = {
+        userId: userId,
+        payment_method: paymentMethod, // SỬA ĐÚNG KEY
+        note: note,
+        shipping_info: {
+          recipient_name: recipientName,
+          recipient_phone: recipientPhone,
+          address: recipientAddress,
+          province_id: selectedProvince,
+          district_id: selectedDistrict,
+          ward_code: selectedWard,
+        },
+        shipping_fee: shippingFee?.total || 0,
+        items: cartItems.map(item => ({
+          product_id: item.product_id,
+          quantity: item.quantity,
+          price: item.product_price,
+        })),
+      };
       const orderResponse = await fetch('http://localhost:4000/api/orders', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
-        body: JSON.stringify({
-          items: cartItems.map(item => ({
-            product_id: item.product_id,
-            quantity: item.quantity,
-            price: item.product_price,
-          })),
-          shipping_info: {
-            recipient_name: recipientName,
-            recipient_phone: recipientPhone,
-            address: recipientAddress,
-            province_id: selectedProvince,
-            district_id: selectedDistrict,
-            ward_code: selectedWard,
-          },
-          shipping_fee: shippingFee?.total || 0,
-          payment_method: 'cod',
-          note: note,
-        }),
+        body: JSON.stringify(orderData),
       });
 
       if (orderResponse.ok) {
         const orderData = await orderResponse.json();
-        alert('Đặt hàng thành công! Mã đơn hàng: ' + orderData.data.id);
-        router.push('/');
+        if (orderData.success) {
+          alert('Đặt hàng thành công! Mã đơn hàng: ' + orderData.data.id);
+          // Xóa giỏ hàng sau khi đặt hàng thành công
+          await fetch('http://localhost:4000/api/cart', {
+            method: 'DELETE',
+            headers: {
+              'Authorization': `Bearer ${token}`,
+            },
+          });
+          router.push('/');
+        } else {
+          alert('Lỗi: ' + (orderData.message || 'Không thể tạo đơn hàng'));
+        }
       } else {
-        const errorData = await orderResponse.json();
+        const errorData = await orderResponse.json().catch(() => ({}));
         alert('Lỗi: ' + (errorData.message || 'Không thể tạo đơn hàng'));
       }
     } catch (error) {
@@ -485,6 +537,80 @@ export default function CartPage() {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                       placeholder="Số nhà, tên đường..."
                     />
+                  </div>
+
+                  {/* Nút tính phí vận chuyển */}
+                  {selectedDistrict > 0 && selectedWard && (
+                    <div>
+                      <button
+                        type="button"
+                        onClick={calculateShippingFee}
+                        disabled={calculatingFee}
+                        className="w-full py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors disabled:bg-gray-400 font-medium flex items-center justify-center gap-2"
+                      >
+                        <Truck className="w-5 h-5" />
+                        {calculatingFee ? 'Đang tính phí...' : 'Tính phí vận chuyển'}
+                      </button>
+                      {shippingFee && (
+                        <div className="mt-2 p-3 bg-green-50 border border-green-200 rounded-lg">
+                          <p className="text-green-800 font-medium">
+                            ✅ Phí vận chuyển: {formatPrice(shippingFee.total)}
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-2">
+                      Phương thức thanh toán
+                    </label>
+                    <div className="space-y-3">
+                      <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                        <input
+                          type="radio"
+                          name="payment_method"
+                          value="cod"
+                          checked={paymentMethod === 'cod'}
+                          onChange={(e) => setPaymentMethod(e.target.value as 'cod')}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <div className="ml-3">
+                          <div className="font-medium text-gray-900">💵 Thanh toán khi nhận hàng (COD)</div>
+                          <div className="text-sm text-gray-500">Thanh toán bằng tiền mặt khi nhận hàng</div>
+                        </div>
+                      </label>
+                      
+                      <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                        <input
+                          type="radio"
+                          name="payment_method"
+                          value="bank_transfer"
+                          checked={paymentMethod === 'bank_transfer'}
+                          onChange={(e) => setPaymentMethod(e.target.value as 'bank_transfer')}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <div className="ml-3">
+                          <div className="font-medium text-gray-900">🏦 Chuyển khoản ngân hàng</div>
+                          <div className="text-sm text-gray-500">Chuyển khoản qua ngân hàng</div>
+                        </div>
+                      </label>
+                      
+                      <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                        <input
+                          type="radio"
+                          name="payment_method"
+                          value="e_wallet"
+                          checked={paymentMethod === 'e_wallet'}
+                          onChange={(e) => setPaymentMethod(e.target.value as 'e_wallet')}
+                          className="w-4 h-4 text-blue-600"
+                        />
+                        <div className="ml-3">
+                          <div className="font-medium text-gray-900">📱 Ví điện tử</div>
+                          <div className="text-sm text-gray-500">Thanh toán qua ví điện tử (Momo, ZaloPay...)</div>
+                        </div>
+                      </label>
+                    </div>
                   </div>
 
                   <div>

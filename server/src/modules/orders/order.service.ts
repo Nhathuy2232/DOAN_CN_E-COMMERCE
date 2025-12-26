@@ -1,6 +1,9 @@
 import cartRepository from '../../infrastructure/repositories/cartRepository';
 import orderRepository from '../../infrastructure/repositories/orderRepository';
+import productRepository from '../../infrastructure/repositories/productRepository';
+import userRepository from '../../infrastructure/repositories/userRepository';
 import ghnService from '../../infrastructure/services/ghnService';
+import emailService from '../../infrastructure/services/emailService';
 
 class OrderService {
   async checkout(input: {
@@ -23,6 +26,15 @@ class OrderService {
       price: number;
     }>;
   }) {
+    console.log('🚀 ==== BẮT ĐẦU XỬ LÝ ĐƠN HÀNG ====');
+    console.log('Input received:', JSON.stringify({
+      userId: input.userId,
+      paymentMethod: input.paymentMethod,
+      hasShippingInfo: !!input.shipping_info,
+      hasItems: !!(input.items && input.items.length > 0),
+      shipping_info: input.shipping_info,
+    }, null, 2));
+
     let cartItems;
     let itemsPayload;
     
@@ -54,74 +66,152 @@ class OrderService {
     const shippingFee = input.shipping_fee || 0;
     const totalAmount = subtotal + shippingFee;
 
-    // Tạo đơn hàng trong database
-    const order = await orderRepository.createOrder({
-      userId: input.userId,
-      addressId: input.addressId || null,
-      totalAmount,
-      shippingFee,
-      paymentMethod: input.paymentMethod,
-      note: input.note,
-      items: itemsPayload,
-      recipientName: input.shipping_info?.recipient_name,
-      recipientPhone: input.shipping_info?.recipient_phone,
-      recipientAddress: input.shipping_info?.address,
-      provinceId: input.shipping_info?.province_id,
-      districtId: input.shipping_info?.district_id,
-      wardCode: input.shipping_info?.ward_code,
-    });
-
-    // Tạo đơn hàng trên GHN nếu có đủ thông tin
+    // Nếu có shipping_info thì phải tạo GHN trước, thành công mới lưu DB
     if (input.shipping_info) {
       try {
-        console.log('Đang tạo đơn GHN với thông tin:', {
-          to_name: input.shipping_info.recipient_name,
-          to_phone: input.shipping_info.recipient_phone,
-          to_address: input.shipping_info.address,
-          to_ward_code: input.shipping_info.ward_code,
-          to_district_id: input.shipping_info.district_id,
+        // Lấy thông tin tên sản phẩm
+        const productDetails = await Promise.all(
+          itemsPayload.map(async (item) => {
+            const product = await productRepository.findById(item.productId);
+            return {
+              name: product?.name || `Sản phẩm #${item.productId}`,
+              quantity: item.quantity,
+              price: parseInt(item.price.toString()),
+            };
+          })
+        );
+
+        // Xử lý COD: Nếu đơn hàng > 5 triệu hoặc > hạn mức GHN thì không thu COD
+        const maxCodLimit = 5000000; // Hạn mức COD tối đa
+        let codAmount = 0;
+        let paymentTypeId = 1; // Người gửi trả phí
+        if (input.paymentMethod === 'cod' && totalAmount <= maxCodLimit) {
+          codAmount = totalAmount;
+          paymentTypeId = 2; // Người nhận trả phí (COD)
+        }
+
+        const ghnResult = await ghnService.createOrderAsync({
+          paymentTypeId: paymentTypeId,
+          note: input.note || '',
+          requiredNote: 'KHONGCHOXEMHANG',
+          fromName: 'nhathuy',
+          fromPhone: '0376911677',
+          fromAddress: 'Trà Vinh',
+          fromWardName: 'Phường 6',
+          fromDistrictName: 'Thành phố Trà Vinh',
+          fromProvinceName: 'Trà Vinh',
+          toName: input.shipping_info.recipient_name,
+          toPhone: input.shipping_info.recipient_phone,
+          toAddress: input.shipping_info.address,
+          toWardCode: input.shipping_info.ward_code,
+          toDistrictId: input.shipping_info.district_id,
           weight: itemsPayload.reduce((sum, item) => sum + (item.quantity * 500), 0),
+          length: 15,
+          width: 15,
+          height: 10,
+          serviceId: 53320,
+          serviceTypeId: 2,
+          codAmount: codAmount,
+          insuranceValue: subtotal > 5000000 ? 5000000 : subtotal,
+          content: 'Dụng cụ câu cá',
+          items: productDetails,
         });
 
-        const ghnOrder = await ghnService.createOrder({
-          to_name: input.shipping_info.recipient_name,
-          to_phone: input.shipping_info.recipient_phone,
-          to_address: input.shipping_info.address,
-          to_ward_code: input.shipping_info.ward_code,
-          to_district_id: input.shipping_info.district_id,
-          weight: itemsPayload.reduce((sum, item) => sum + (item.quantity * 500), 0), // 500g mỗi sản phẩm
-          service_id: 53320, // Service ID mặc định
-          service_type_id: 2, // E-commerce delivery
-          payment_type_id: input.paymentMethod === 'cod' ? 2 : 1,
-          required_note: 'CHOXEMHANGKHONGTHU',
-          items: itemsPayload.map((item) => ({
-            name: `Product ${item.productId}`,
-            quantity: item.quantity,
-            price: item.price,
-          })),
-          cod_amount: input.paymentMethod === 'cod' ? totalAmount : 0,
-          insurance_value: subtotal,
+        if (!ghnResult.success || !ghnResult.data) {
+          throw new Error('Không thể tạo đơn hàng trên GHN: ' + (ghnResult.message || 'Unknown error'));
+        }
+
+        // Nếu thành công, mới tạo đơn trong DB
+        const order = await orderRepository.createOrder({
+          userId: input.userId,
+          addressId: input.addressId || null,
+          totalAmount,
+          shippingFee,
+          paymentMethod: input.paymentMethod,
           note: input.note,
+          items: itemsPayload,
+          recipientName: input.shipping_info?.recipient_name,
+          recipientPhone: input.shipping_info?.recipient_phone,
+          recipientAddress: input.shipping_info?.address,
+          provinceId: input.shipping_info?.province_id,
+          districtId: input.shipping_info?.district_id,
+          wardCode: input.shipping_info?.ward_code,
         });
-
-        console.log('✅ Tạo đơn GHN thành công:', ghnOrder.order_code);
 
         // Cập nhật mã đơn GHN vào order
-        await orderRepository.updateGHNOrderCode(order.id, ghnOrder.order_code);
-        
-        order.ghn_order_code = ghnOrder.order_code;
-      } catch (ghnError: any) {
-        console.error('❌ Lỗi tạo đơn GHN:', ghnError.response?.data || ghnError.message);
-        // Không throw error để vẫn tạo được đơn hàng trong hệ thống
+        await orderRepository.updateGHNOrderCode(order.id, ghnResult.data.order_code);
+        order.ghn_order_code = ghnResult.data.order_code;
+
+        // Gửi email thông báo đơn hàng mới
+        try {
+          const user = await userRepository.findById(input.userId);
+          if (user && user.email) {
+            await emailService.sendOrderConfirmationToCustomer({
+              customerEmail: user.email,
+              customerName: user.name || input.shipping_info?.recipient_name || 'Khách hàng',
+              orderNumber: order.id.toString(),
+              orderDate: order.created_at || new Date(),
+              items: productDetails,
+              subtotal: subtotal,
+              shippingFee: shippingFee,
+              total: totalAmount,
+              paymentMethod: input.paymentMethod,
+              shippingAddress: input.shipping_info ? `${input.shipping_info.address}` : 'Chưa có thông tin',
+              ghnOrderCode: order.ghn_order_code,
+            });
+            console.log('✅ Đã gửi email xác nhận đến khách hàng:', user.email);
+          }
+          await emailService.sendNewOrderNotificationToAdmin({
+            orderNumber: order.id.toString(),
+            orderDate: order.created_at || new Date(),
+            customerName: user?.name || input.shipping_info?.recipient_name || 'Khách hàng',
+            customerEmail: user?.email || 'Không có',
+            customerPhone: input.shipping_info?.recipient_phone || 'Không có',
+            items: productDetails,
+            subtotal: subtotal,
+            shippingFee: shippingFee,
+            total: totalAmount,
+            paymentMethod: input.paymentMethod,
+            shippingAddress: input.shipping_info ? `${input.shipping_info.address}` : 'Chưa có thông tin',
+            ghnOrderCode: order.ghn_order_code,
+          });
+          console.log('✅ Đã gửi email thông báo đến admin');
+        } catch (emailError: any) {
+          console.error('⚠️ Lỗi gửi email (không ảnh hưởng đơn hàng):', emailError.message);
+        }
+
+        // Xóa giỏ hàng sau khi đặt hàng thành công (chỉ nếu dùng giỏ hàng)
+        if (!input.items) {
+          await cartRepository.clear(input.userId);
+        }
+
+        return order;
+      } catch (err) {
+        // Nếu lỗi GHN thì trả lỗi cho frontend, không lưu đơn
+        throw err;
       }
+    } else {
+      // Trường hợp không có shipping_info (logic cũ, không tạo GHN)
+      const order = await orderRepository.createOrder({
+        userId: input.userId,
+        addressId: input.addressId || null,
+        totalAmount,
+        shippingFee,
+        paymentMethod: input.paymentMethod,
+        note: input.note,
+        items: itemsPayload,
+        recipientName: undefined,
+        recipientPhone: undefined,
+        recipientAddress: undefined,
+        provinceId: undefined,
+        districtId: undefined,
+        wardCode: undefined,
+      });
+      if (!input.items) {
+        await cartRepository.clear(input.userId);
+      }
+      return order;
     }
-
-    // Xóa giỏ hàng sau khi đặt hàng thành công (chỉ nếu dùng giỏ hàng)
-    if (!input.items) {
-      await cartRepository.clear(input.userId);
-    }
-
-    return order;
   }
 
   listUserOrders(userId: number) {
@@ -137,6 +227,35 @@ class OrderService {
     status: 'pending' | 'paid' | 'shipped' | 'completed' | 'cancelled'
   ) {
     return orderRepository.updateStatus(orderId, status);
+  }
+
+  async confirmPayment(orderId: number, userId: number) {
+    // Lấy thông tin đơn hàng
+    const order = await orderRepository.findByIdWithItems(orderId);
+    
+    if (!order) {
+      throw new Error('Không tìm thấy đơn hàng');
+    }
+
+    if (order.user_id !== userId) {
+      throw new Error('Bạn không có quyền xác nhận đơn hàng này');
+    }
+
+    if (order.status === 'paid' || order.status === 'completed') {
+      throw new Error('Đơn hàng đã được thanh toán');
+    }
+
+    // Cập nhật trạng thái đơn hàng thành paid
+    await orderRepository.updateStatus(orderId, 'paid');
+
+    // Xóa giỏ hàng của người dùng (các sản phẩm đã thanh toán)
+    await cartRepository.clear(userId);
+
+    return {
+      order_id: orderId,
+      status: 'paid',
+      message: 'Thanh toán thành công. Giỏ hàng đã được xóa.',
+    };
   }
 }
 

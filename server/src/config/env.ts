@@ -21,9 +21,10 @@ const env = {
     defaultLimit: Number(process.env.PAGINATION_LIMIT ?? 20),
   },
   ghn: {
-    apiUrl: process.env.GHN_API_URL ?? 'https://dev-online-gateway.ghn.vn/shiip/public-api',
-    shopId: Number(process.env.GHN_SHOP_ID ?? 5073856),
-    token: process.env.GHN_TOKEN ?? '',
+    baseUrl: process.env.GHN_BASE_URL ?? 'https://dev-online-gateway.ghn.vn',
+    shopId: process.env.GHN_SHOP_ID ?? '6148508',
+    token: process.env.GHN_TOKEN ?? '27b6a6da-d0f0-11f0-bcb9-a63866d22c8d',
+    phone: process.env.GHN_PHONE ?? '0376911677',
   },
 };
 

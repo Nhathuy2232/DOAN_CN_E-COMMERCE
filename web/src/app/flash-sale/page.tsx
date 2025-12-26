@@ -6,73 +6,87 @@ import Link from "next/link";
 import { ProductCard } from "@/components/ProductCard";
 import { apiClient } from "@/lib/api-client";
 
-interface Product {
+interface FlashSaleProduct {
+  id: number;
   product_id: number;
-  name: string;
-  price: number;
-  sale_price: number | null;
-  image_url: string;
-  stock_quantity: number;
+  product_name: string;
+  product_price: number;
+  product_thumbnail: string | null;
+  discount_percentage: number;
+  discounted_price: number;
+  start_time: string;
+  end_time: string;
+  status: string;
 }
 
 export default function FlashSalePage() {
-  const [products, setProducts] = useState<Product[]>([]);
+  const [products, setProducts] = useState<FlashSaleProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [timeLeft, setTimeLeft] = useState({
-    hours: 3,
-    minutes: 29,
-    seconds: 51
+    hours: 0,
+    minutes: 0,
+    seconds: 0
   });
   const [sortBy, setSortBy] = useState<'default' | 'price-asc' | 'price-desc' | 'discount'>('default');
 
-  // Countdown timer
+  // Fetch flash sale products
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTimeLeft(prev => {
-        if (prev.seconds > 0) {
-          return { ...prev, seconds: prev.seconds - 1 };
-        } else if (prev.minutes > 0) {
-          return { ...prev, minutes: prev.minutes - 1, seconds: 59 };
-        } else if (prev.hours > 0) {
-          return { hours: prev.hours - 1, minutes: 59, seconds: 59 };
-        }
-        return prev;
-      });
-    }, 1000);
-    return () => clearInterval(timer);
-  }, []);
-
-  // Fetch products on sale
-  useEffect(() => {
-    async function fetchProducts() {
+    async function fetchFlashSales() {
       try {
         setLoading(true);
-        const response = await apiClient.getProducts({ limit: 100 }) as any;
-        if (response.success && response.data && response.data.products) {
-          // Lọc các sản phẩm có giá sale
-          const saleProducts = response.data.products.filter((p: Product) => p.sale_price && p.sale_price < p.price);
-          setProducts(saleProducts);
+        const response = await fetch('http://localhost:4000/api/flash-sales/active');
+        if (response.ok) {
+          const result = await response.json();
+          if (result.success && result.data) {
+            setProducts(result.data);
+            
+            // Calculate time left based on the earliest end_time
+            if (result.data.length > 0) {
+              const earliestEnd = new Date(result.data[0].end_time);
+              calculateTimeLeft(earliestEnd);
+            }
+          }
         }
       } catch (error) {
-        console.error('Failed to fetch products:', error);
+        console.error('Failed to fetch flash sales:', error);
       } finally {
         setLoading(false);
       }
     }
-    fetchProducts();
+    fetchFlashSales();
   }, []);
+
+  // Calculate time remaining
+  const calculateTimeLeft = (endTime: Date) => {
+    const interval = setInterval(() => {
+      const now = new Date().getTime();
+      const end = endTime.getTime();
+      const distance = end - now;
+
+      if (distance < 0) {
+        clearInterval(interval);
+        setTimeLeft({ hours: 0, minutes: 0, seconds: 0 });
+      } else {
+        setTimeLeft({
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        });
+      }
+    }, 1000);
+
+    return () => clearInterval(interval);
+  };
 
   // Sort products
   const sortedProducts = [...products].sort((a, b) => {
     switch (sortBy) {
       case 'price-asc':
-        return (a.sale_price || a.price) - (b.sale_price || b.price);
+        return a.discounted_price - b.discounted_price;
       case 'price-desc':
-        return (b.sale_price || b.price) - (a.sale_price || a.price);
+        return b.discounted_price - a.discounted_price;
       case 'discount':
-        const discountA = a.sale_price ? ((a.price - a.sale_price) / a.price) * 100 : 0;
-        const discountB = b.sale_price ? ((b.price - b.sale_price) / b.price) * 100 : 0;
-        return discountB - discountA;
+        return b.discount_percentage - a.discount_percentage;
       default:
         return 0;
     }
@@ -206,12 +220,7 @@ export default function FlashSalePage() {
         ) : (
           <>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
-              {sortedProducts.map((product) => {
-                const discountPercent = product.sale_price
-                  ? Math.round(((product.price - product.sale_price) / product.price) * 100)
-                  : 0;
-
-                return (
+              {sortedProducts.map((product) => (
                   <Link
                     key={product.product_id}
                     href={`/products/${product.product_id}`}
@@ -219,53 +228,31 @@ export default function FlashSalePage() {
                   >
                     <div className="relative overflow-hidden bg-gray-50">
                       <img
-                        src={product.image_url || '/images/products/placeholder.jpg'}
-                        alt={product.name}
+                        src={product.product_thumbnail || '/images/products/placeholder.jpg'}
+                        alt={product.product_name}
                         className="w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300"
                         onError={(e) => {
                           const target = e.target as HTMLImageElement;
                           target.src = '/images/products/placeholder.jpg';
                         }}
                       />
-                      {discountPercent > 0 && (
-                        <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg shadow-lg">
-                          -{discountPercent}%
-                        </div>
-                      )}
-                      {product.stock_quantity < 10 && product.stock_quantity > 0 && (
-                        <div className="absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded">
-                          Sắp hết
-                        </div>
-                      )}
-                      {product.stock_quantity === 0 && (
-                        <div className="absolute inset-0 bg-black/50 flex items-center justify-center">
-                          <span className="bg-gray-800 text-white px-4 py-2 rounded-lg font-bold">
-                            HẾT HÀNG
-                          </span>
-                        </div>
-                      )}
+                      <div className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg shadow-lg">
+                        -{product.discount_percentage}%
+                      </div>
                     </div>
                     <div className="p-3">
                       <h3 className="text-sm text-gray-800 line-clamp-2 mb-2 h-10 group-hover:text-orange-600 transition-colors">
-                        {product.name}
+                        {product.product_name}
                       </h3>
                       <div className="space-y-1">
-                        {product.sale_price ? (
-                          <>
-                            <div className="flex items-baseline gap-2">
-                              <span className="text-orange-600 text-lg font-bold">
-                                {product.sale_price.toLocaleString('vi-VN')}₫
-                              </span>
-                            </div>
-                            <div className="text-gray-400 text-sm line-through">
-                              {product.price.toLocaleString('vi-VN')}₫
-                            </div>
-                          </>
-                        ) : (
-                          <div className="text-orange-600 text-lg font-bold">
-                            {product.price.toLocaleString('vi-VN')}₫
-                          </div>
-                        )}
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-orange-600 text-lg font-bold">
+                            {product.discounted_price.toLocaleString('vi-VN')}₫
+                          </span>
+                        </div>
+                        <div className="text-gray-400 text-sm line-through">
+                          {product.product_price.toLocaleString('vi-VN')}₫
+                        </div>
                       </div>
                       
                       {/* Progress bar cho số lượng đã bán (giả lập) */}
@@ -282,7 +269,7 @@ export default function FlashSalePage() {
                     </div>
                   </Link>
                 );
-              })}
+              ))}
             </div>
 
             {/* Promotion Banner */}

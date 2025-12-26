@@ -40,11 +40,12 @@ export class OrderController {
         });
       }
 
-      // Logic cũ cho trường hợp có address_id
+      // Logic cũ cho trường hợp có address_id (deprecated - nên dùng shipping_info)
+      // Giữ lại để tương thích ngược, nhưng khuyến khích dùng shipping_info từ GHN API
       if (!address_id) {
         return res.status(400).json({
           success: false,
-          message: 'Vui lòng chọn địa chỉ giao hàng',
+          message: 'Vui lòng cung cấp shipping_info hoặc address_id. Khuyến nghị sử dụng shipping_info từ GHN API.',
         });
       }
 
@@ -184,6 +185,43 @@ export class OrderController {
         data: order,
       });
     } catch (error) {
+      next(error);
+    }
+  }
+
+  async confirmPayment(req: Request, res: Response, next: NextFunction) {
+    try {
+      const userId = req.user?.id;
+      if (!userId) {
+        return res.status(401).json({
+          success: false,
+          message: 'Vui lòng đăng nhập',
+        });
+      }
+
+      const { order_id } = req.body;
+
+      if (!order_id) {
+        return res.status(400).json({
+          success: false,
+          message: 'Vui lòng cung cấp ID đơn hàng',
+        });
+      }
+
+      const result = await orderService.confirmPayment(parseInt(order_id), userId);
+
+      res.json({
+        success: true,
+        message: 'Xác nhận thanh toán thành công',
+        data: result,
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        return res.status(400).json({
+          success: false,
+          message: error.message,
+        });
+      }
       next(error);
     }
   }

@@ -158,7 +158,7 @@ const options: swaggerJsdoc.Options = {
       { name: 'Shipping', description: 'Tích hợp vận chuyển GHN' },
     ],
   },
-  apis: ['./src/api/*.ts', './src/interfaces/http/routes/*.ts'],
+  apis: ['./src/api/*.ts'],
 };
 
 const swaggerSpec = swaggerJsdoc(options);

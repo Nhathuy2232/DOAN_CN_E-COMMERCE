@@ -41,8 +41,12 @@ class ApiClient {
         });
         if (!response.ok) {
             const error = await response.json().catch(()=>({
+                    success: false,
                     message: 'An error occurred'
                 }));
+            // Nếu là lỗi 401 (unauthorized), có thể xóa token
+            if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
+            ;
             throw new Error(error.message || `HTTP ${response.status}`);
         }
         return response.json();

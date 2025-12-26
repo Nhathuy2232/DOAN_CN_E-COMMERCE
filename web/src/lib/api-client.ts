@@ -41,8 +41,15 @@ class ApiClient {
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({
+        success: false,
         message: 'An error occurred',
       }));
+      
+      // Nếu là lỗi 401 (unauthorized), có thể xóa token
+      if (response.status === 401 && typeof window !== 'undefined') {
+        localStorage.removeItem('accessToken');
+      }
+      
       throw new Error(error.message || `HTTP ${response.status}`);
     }
 
