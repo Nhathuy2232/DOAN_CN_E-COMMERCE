@@ -13,15 +13,12 @@ export function Footer() {
               CHĂM SÓC KHÁCH HÀNG
             </h3>
             <ul className="space-y-2 text-sm text-gray-600">
-              <li><Link href="#" className="hover:text-primary-600">Trung Tâm Trợ Giúp</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Hướng Dẫn Mua Hàng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Hướng Dẫn Chọn Sản Phẩm</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Thanh Toán</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Vận Chuyển</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Trả Hàng & Hoàn Tiền</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Chăm Sóc Khách Hàng</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Chính Sách Bảo Hành</Link></li>
-              <li><Link href="#" className="hover:text-primary-600">Bảo Quản Dụng Cụ</Link></li>
+              <li><Link href="/support#help-center" className="hover:text-primary-600">Trung Tâm Trợ Giúp</Link></li>
+              <li><Link href="/support#purchase-guide" className="hover:text-primary-600">Hướng Dẫn Mua Hàng</Link></li>
+              <li><Link href="/support#product-guide" className="hover:text-primary-600">Hướng Dẫn Chọn Sản Phẩm</Link></li>
+              <li><Link href="/support#customer-care" className="hover:text-primary-600">Chăm Sóc Khách Hàng</Link></li>
+              <li><Link href="/support#warranty-policy" className="hover:text-primary-600">Chính Sách Bảo Hành</Link></li>
+              <li><Link href="/blogs" className="hover:text-primary-600">Bảo Quản Dụng Cụ</Link></li>
             </ul>
           </div>
 
@@ -46,24 +43,9 @@ export function Footer() {
             <h3 className="font-semibold text-gray-800 mb-4 text-sm uppercase">
               THANH TOÁN
             </h3>
-            <div className="grid grid-cols-3 gap-2">
-              <div className="bg-white border border-gray-200 rounded p-1">
+            <div className="grid grid-cols-2 gap-2">
+              <div className="bg-white border border-gray-200 rounded p-3 col-span-2">
                 <img src="https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8" alt="COD" className="w-full" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-1">
-                <img src="https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16" alt="Credit" className="w-full" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-1">
-                <img src="https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08" alt="ATM" className="w-full" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-1">
-                <img src="https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c" alt="Shopee Pay" className="w-full" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-1">
-                <img src="https://down-vn.img.susercontent.com/file/2c46b83d84111ddc32cfd3b5995d9281" alt="Installment" className="w-full" />
-              </div>
-              <div className="bg-white border border-gray-200 rounded p-1">
-                <img src="https://down-vn.img.susercontent.com/file/5e3f0bee86058637ff23cfdf2e14ca09" alt="SPayLater" className="w-full" />
               </div>
             </div>
 

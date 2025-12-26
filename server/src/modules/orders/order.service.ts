@@ -1,9 +1,9 @@
-import cartRepository from '../../infrastructure/repositories/cartRepository';
-import orderRepository from '../../infrastructure/repositories/orderRepository';
-import productRepository from '../../infrastructure/repositories/productRepository';
-import userRepository from '../../infrastructure/repositories/userRepository';
-import ghnService from '../../infrastructure/services/ghnService';
-import emailService from '../../infrastructure/services/emailService';
+import cartRepository from '../../infrastructure/repositories/cartRepositoryImpl';
+import orderRepository from '../../infrastructure/repositories/orderRepositoryImpl';
+import productRepository from '../../infrastructure/repositories/productRepositoryImpl';
+import userRepository from '../../infrastructure/repositories/userRepositoryImpl';
+import ghnService from '../../infrastructure/external-services/GHNServiceImpl';
+import emailService from '../../infrastructure/external-services/EmailServiceImpl';
 
 class OrderService {
   async checkout(input: {
@@ -128,7 +128,7 @@ class OrderService {
           totalAmount,
           shippingFee,
           paymentMethod: input.paymentMethod,
-          note: input.note,
+          ...(input.note && { note: input.note }),
           items: itemsPayload,
           recipientName: input.shipping_info?.recipient_name,
           recipientPhone: input.shipping_info?.recipient_phone,
@@ -148,7 +148,7 @@ class OrderService {
           if (user && user.email) {
             await emailService.sendOrderConfirmationToCustomer({
               customerEmail: user.email,
-              customerName: user.name || input.shipping_info?.recipient_name || 'Khách hàng',
+              customerName: user.full_name || input.shipping_info?.recipient_name || 'Khách hàng',
               orderNumber: order.id.toString(),
               orderDate: order.created_at || new Date(),
               items: productDetails,
@@ -157,14 +157,14 @@ class OrderService {
               total: totalAmount,
               paymentMethod: input.paymentMethod,
               shippingAddress: input.shipping_info ? `${input.shipping_info.address}` : 'Chưa có thông tin',
-              ghnOrderCode: order.ghn_order_code,
+              ghnOrderCode: order.ghn_order_code || '',
             });
             console.log('✅ Đã gửi email xác nhận đến khách hàng:', user.email);
           }
           await emailService.sendNewOrderNotificationToAdmin({
             orderNumber: order.id.toString(),
             orderDate: order.created_at || new Date(),
-            customerName: user?.name || input.shipping_info?.recipient_name || 'Khách hàng',
+            customerName: user?.full_name || input.shipping_info?.recipient_name || 'Khách hàng',
             customerEmail: user?.email || 'Không có',
             customerPhone: input.shipping_info?.recipient_phone || 'Không có',
             items: productDetails,
@@ -173,7 +173,7 @@ class OrderService {
             total: totalAmount,
             paymentMethod: input.paymentMethod,
             shippingAddress: input.shipping_info ? `${input.shipping_info.address}` : 'Chưa có thông tin',
-            ghnOrderCode: order.ghn_order_code,
+            ghnOrderCode: order.ghn_order_code || '',
           });
           console.log('✅ Đã gửi email thông báo đến admin');
         } catch (emailError: any) {
@@ -198,14 +198,8 @@ class OrderService {
         totalAmount,
         shippingFee,
         paymentMethod: input.paymentMethod,
-        note: input.note,
+        ...(input.note && { note: input.note }),
         items: itemsPayload,
-        recipientName: undefined,
-        recipientPhone: undefined,
-        recipientAddress: undefined,
-        provinceId: undefined,
-        districtId: undefined,
-        wardCode: undefined,
       });
       if (!input.items) {
         await cartRepository.clear(input.userId);

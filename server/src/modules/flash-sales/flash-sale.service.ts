@@ -1,5 +1,5 @@
-import flashSaleRepository from '../../infrastructure/repositories/flashSaleRepository';
-import productRepository from '../../infrastructure/repositories/productRepository';
+import flashSaleRepository from '../../infrastructure/repositories/flashSaleRepositoryImpl';
+import productRepository from '../../infrastructure/repositories/productRepositoryImpl';
 
 class FlashSaleService {
   async createFlashSale(data: {

@@ -1,6 +1,6 @@
 import { Router, Request, Response, NextFunction } from 'express';
 import { authenticate } from '../interfaces/http/middlewares/authMiddleware';
-import wishlistRepository from '../infrastructure/repositories/wishlistRepository';
+import wishlistRepository from '../infrastructure/repositories/wishlistRepositoryImpl';
 
 const router = Router();
 
@@ -36,7 +36,7 @@ router.get('/', authenticate, async (req: Request, res: Response, next: NextFunc
 router.get('/check/:productId', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
-    const productId = parseInt(req.params.productId);
+    const productId = parseInt(req.params.productId || '0');
     
     const inWishlist = await wishlistRepository.isInWishlist(userId, productId);
     
@@ -99,7 +99,7 @@ router.post('/', authenticate, async (req: Request, res: Response, next: NextFun
 router.delete('/:productId', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
     const userId = req.user!.id;
-    const productId = parseInt(req.params.productId);
+    const productId = parseInt(req.params.productId || '0');
     
     const success = await wishlistRepository.removeItem(userId, productId);
 

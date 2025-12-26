@@ -480,7 +480,7 @@ function Footer() {
                                     children: [
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/support#help-center",
                                                 className: "hover:text-primary-600",
                                                 children: "Trung Tâm Trợ Giúp"
                                             }, void 0, false, {
@@ -495,7 +495,7 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/support#purchase-guide",
                                                 className: "hover:text-primary-600",
                                                 children: "Hướng Dẫn Mua Hàng"
                                             }, void 0, false, {
@@ -510,7 +510,7 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/support#product-guide",
                                                 className: "hover:text-primary-600",
                                                 children: "Hướng Dẫn Chọn Sản Phẩm"
                                             }, void 0, false, {
@@ -525,9 +525,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/support#customer-care",
                                                 className: "hover:text-primary-600",
-                                                children: "Thanh Toán"
+                                                children: "Chăm Sóc Khách Hàng"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 19,
@@ -540,9 +540,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/support#warranty-policy",
                                                 className: "hover:text-primary-600",
-                                                children: "Vận Chuyển"
+                                                children: "Chính Sách Bảo Hành"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 20,
@@ -555,9 +555,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
+                                                href: "/blogs",
                                                 className: "hover:text-primary-600",
-                                                children: "Trả Hàng & Hoàn Tiền"
+                                                children: "Bảo Quản Dụng Cụ"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 21,
@@ -566,51 +566,6 @@ function Footer() {
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
                                             lineNumber: 21,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
-                                                className: "hover:text-primary-600",
-                                                children: "Chăm Sóc Khách Hàng"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 22,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 22,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
-                                                className: "hover:text-primary-600",
-                                                children: "Chính Sách Bảo Hành"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 23,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 23,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
-                                                className: "hover:text-primary-600",
-                                                children: "Bảo Quản Dụng Cụ"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 24,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 24,
                                             columnNumber: 15
                                         }, this)
                                     ]
@@ -632,7 +587,7 @@ function Footer() {
                                     children: "VỀ CHÚNG TÔI"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 30,
+                                    lineNumber: 27,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -645,6 +600,53 @@ function Footer() {
                                                 children: "Giới Thiệu Cửa Hàng"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
+                                                lineNumber: 31,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Footer.tsx",
+                                            lineNumber: 31,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/privacy",
+                                                className: "hover:text-primary-600",
+                                                children: "Chính Sách Bảo Mật"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Footer.tsx",
+                                                lineNumber: 32,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Footer.tsx",
+                                            lineNumber: 32,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "/products",
+                                                className: "hover:text-primary-600",
+                                                children: "Sản Phẩm Chính Hãng"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Footer.tsx",
+                                                lineNumber: 33,
+                                                columnNumber: 19
+                                            }, this)
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/components/Footer.tsx",
+                                            lineNumber: 33,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                                                href: "https://www.facebook.com/profile.php?id=61571178752304",
+                                                target: "_blank",
+                                                rel: "noopener noreferrer",
+                                                className: "hover:text-primary-600",
+                                                children: "Kênh Đại Lý"
+                                            }, void 0, false, {
+                                                fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 34,
                                                 columnNumber: 19
                                             }, this)
@@ -655,9 +657,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/privacy",
+                                                href: "/flash-sale",
                                                 className: "hover:text-primary-600",
-                                                children: "Chính Sách Bảo Mật"
+                                                children: "Khuyến Mãi"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 35,
@@ -670,9 +672,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/products",
+                                                href: "/blogs",
                                                 className: "hover:text-primary-600",
-                                                children: "Sản Phẩm Chính Hãng"
+                                                children: "Blog Câu Cá"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 36,
@@ -685,11 +687,9 @@ function Footer() {
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
                                             children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "https://www.facebook.com/profile.php?id=61571178752304",
-                                                target: "_blank",
-                                                rel: "noopener noreferrer",
+                                                href: "#",
                                                 className: "hover:text-primary-600",
-                                                children: "Kênh Đại Lý"
+                                                children: "Liên Hệ"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
                                                 lineNumber: 37,
@@ -699,62 +699,17 @@ function Footer() {
                                             fileName: "[project]/src/components/Footer.tsx",
                                             lineNumber: 37,
                                             columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/flash-sale",
-                                                className: "hover:text-primary-600",
-                                                children: "Khuyến Mãi"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 38,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 38,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/blogs",
-                                                className: "hover:text-primary-600",
-                                                children: "Blog Câu Cá"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 39,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 39,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "#",
-                                                className: "hover:text-primary-600",
-                                                children: "Liên Hệ"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 40,
-                                                columnNumber: 19
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 40,
-                                            columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 33,
+                                    lineNumber: 30,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 29,
+                            lineNumber: 26,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -764,112 +719,30 @@ function Footer() {
                                     children: "THANH TOÁN"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 46,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "grid grid-cols-3 gap-2",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8",
-                                                alt: "COD",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 51,
-                                                columnNumber: 17
-                                            }, this)
+                                    className: "grid grid-cols-2 gap-2",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "bg-white border border-gray-200 rounded p-3 col-span-2",
+                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
+                                            src: "https://down-vn.img.susercontent.com/file/d4bbea4570b93bfd5fc652ca82a262a8",
+                                            alt: "COD",
+                                            className: "w-full"
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 50,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/a0a9062ebe19b45c1ae0506f16af5c16",
-                                                alt: "Credit",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 54,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 53,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/38fd98e55806c3b2e4535c4e4a6c4c08",
-                                                alt: "ATM",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 57,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 56,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/bc2a874caeee705449c164be385b796c",
-                                                alt: "Shopee Pay",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 60,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 59,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/2c46b83d84111ddc32cfd3b5995d9281",
-                                                alt: "Installment",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 63,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 62,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "bg-white border border-gray-200 rounded p-1",
-                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                src: "https://down-vn.img.susercontent.com/file/5e3f0bee86058637ff23cfdf2e14ca09",
-                                                alt: "SPayLater",
-                                                className: "w-full"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 66,
-                                                columnNumber: 17
-                                            }, this)
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 65,
-                                            columnNumber: 15
+                                            lineNumber: 48,
+                                            columnNumber: 17
                                         }, this)
-                                    ]
-                                }, void 0, true, {
+                                    }, void 0, false, {
+                                        fileName: "[project]/src/components/Footer.tsx",
+                                        lineNumber: 47,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 49,
+                                    lineNumber: 46,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -877,7 +750,7 @@ function Footer() {
                                     children: "ĐƠN VỊ VẬN CHUYỂN"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 70,
+                                    lineNumber: 52,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -888,18 +761,18 @@ function Footer() {
                                         className: "w-full"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Footer.tsx",
-                                        lineNumber: 74,
+                                        lineNumber: 56,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 73,
+                                    lineNumber: 55,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 45,
+                            lineNumber: 42,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -909,7 +782,7 @@ function Footer() {
                                     children: "THEO DÕI CHÚNG TÔI TRÊN"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 82,
+                                    lineNumber: 64,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
@@ -924,19 +797,19 @@ function Footer() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Footer.tsx",
-                                                        lineNumber: 88,
+                                                        lineNumber: 70,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Facebook"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 87,
+                                                lineNumber: 69,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 86,
+                                            lineNumber: 68,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -948,19 +821,19 @@ function Footer() {
                                                         className: "w-4 h-4"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Footer.tsx",
-                                                        lineNumber: 94,
+                                                        lineNumber: 76,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Instagram"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 93,
+                                                lineNumber: 75,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 92,
+                                            lineNumber: 74,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
@@ -976,36 +849,36 @@ function Footer() {
                                                             d: "M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z"
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/components/Footer.tsx",
-                                                            lineNumber: 101,
+                                                            lineNumber: 83,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/components/Footer.tsx",
-                                                        lineNumber: 100,
+                                                        lineNumber: 82,
                                                         columnNumber: 19
                                                     }, this),
                                                     "TikTok"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 99,
+                                                lineNumber: 81,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 98,
+                                            lineNumber: 80,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 85,
+                                    lineNumber: 67,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 81,
+                            lineNumber: 63,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1015,7 +888,7 @@ function Footer() {
                                     children: "KẾT NỐI VỚI CHÚNG TÔI"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 111,
+                                    lineNumber: 93,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1030,28 +903,28 @@ function Footer() {
                                                 className: "w-full h-full"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/Footer.tsx",
-                                                lineNumber: 117,
+                                                lineNumber: 99,
                                                 columnNumber: 19
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/src/components/Footer.tsx",
-                                            lineNumber: 116,
+                                            lineNumber: 98,
                                             columnNumber: 17
                                         }, this)
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Footer.tsx",
-                                        lineNumber: 115,
+                                        lineNumber: 97,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 114,
+                                    lineNumber: 96,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 110,
+                            lineNumber: 92,
                             columnNumber: 11
                         }, this)
                     ]
@@ -1068,7 +941,7 @@ function Footer() {
                             children: "© 2024 Cần Thủ Shop. Tất cả các quyền được bảo lưu."
                         }, void 0, false, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 127,
+                            lineNumber: 109,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1076,7 +949,7 @@ function Footer() {
                             children: "Chuyên cung cấp dụng cụ & phụ kiện câu cá chất lượng cao cho cần thủ Việt Nam"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 130,
+                            lineNumber: 112,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1086,61 +959,61 @@ function Footer() {
                                     children: "CHÍNH SÁCH BẢO MẬT"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 134,
+                                    lineNumber: 116,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "|"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 117,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "QUY CHẾ HOẠT ĐỘNG"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 136,
+                                    lineNumber: 118,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "|"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 137,
+                                    lineNumber: 119,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "CHÍNH SÁCH VẬN CHUYỂN"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 138,
+                                    lineNumber: 120,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "|"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 139,
+                                    lineNumber: 121,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                     children: "CHÍNH SÁCH TRẢ HÀNG VÀ HOÀN TIỀN"
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Footer.tsx",
-                                    lineNumber: 140,
+                                    lineNumber: 122,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Footer.tsx",
-                            lineNumber: 133,
+                            lineNumber: 115,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/components/Footer.tsx",
-                    lineNumber: 126,
+                    lineNumber: 108,
                     columnNumber: 9
                 }, this)
             ]
@@ -1393,7 +1266,6 @@ function CartPage() {
     const updateQuantity = async (itemId, newQuantity)=>{
         if (newQuantity < 1) return;
         try {
-            var _cartItems_find;
             const token = localStorage.getItem('accessToken');
             const response = await fetch('http://localhost:4000/api/cart', {
                 method: 'PUT',
@@ -1402,7 +1274,7 @@ function CartPage() {
                     'Authorization': "Bearer ".concat(token)
                 },
                 body: JSON.stringify({
-                    product_id: (_cartItems_find = cartItems.find((item)=>item.id === itemId)) === null || _cartItems_find === void 0 ? void 0 : _cartItems_find.product_id,
+                    itemId,
                     quantity: newQuantity
                 })
             });
@@ -1531,12 +1403,12 @@ function CartPage() {
                 className: "animate-spin rounded-full h-12 w-12 border-4 border-blue-600 border-t-transparent"
             }, void 0, false, {
                 fileName: "[project]/src/app/cart/page.tsx",
-                lineNumber: 362,
+                lineNumber: 356,
                 columnNumber: 9
             }, this)
         }, void 0, false, {
             fileName: "[project]/src/app/cart/page.tsx",
-            lineNumber: 361,
+            lineNumber: 355,
             columnNumber: 7
         }, this);
     }
@@ -1545,7 +1417,7 @@ function CartPage() {
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Header$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Header"], {}, void 0, false, {
                 fileName: "[project]/src/app/cart/page.tsx",
-                lineNumber: 369,
+                lineNumber: 363,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("main", {
@@ -1556,7 +1428,7 @@ function CartPage() {
                         children: "Giỏ hàng của bạn"
                     }, void 0, false, {
                         fileName: "[project]/src/app/cart/page.tsx",
-                        lineNumber: 372,
+                        lineNumber: 366,
                         columnNumber: 9
                     }, this),
                     cartItems.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1566,7 +1438,7 @@ function CartPage() {
                                 className: "w-16 h-16 text-gray-400 mx-auto mb-4"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 376,
+                                lineNumber: 370,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -1574,7 +1446,7 @@ function CartPage() {
                                 children: "Giỏ hàng trống"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 377,
+                                lineNumber: 371,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1582,7 +1454,7 @@ function CartPage() {
                                 children: "Hãy thêm sản phẩm vào giỏ hàng để tiếp tục mua sắm"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 378,
+                                lineNumber: 372,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1591,13 +1463,13 @@ function CartPage() {
                                 children: "Tiếp tục mua sắm"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 379,
+                                lineNumber: 373,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/cart/page.tsx",
-                        lineNumber: 375,
+                        lineNumber: 369,
                         columnNumber: 11
                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "grid grid-cols-1 lg:grid-cols-3 gap-8",
@@ -1615,7 +1487,7 @@ function CartPage() {
                                                     className: "w-24 h-24 object-cover rounded-lg"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                    lineNumber: 393,
+                                                    lineNumber: 387,
                                                     columnNumber: 21
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1626,7 +1498,7 @@ function CartPage() {
                                                             children: item.product_name
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                            lineNumber: 399,
+                                                            lineNumber: 393,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1634,7 +1506,7 @@ function CartPage() {
                                                             children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$formatPrice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(item.product_price)
                                                         }, void 0, false, {
                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                            lineNumber: 400,
+                                                            lineNumber: 394,
                                                             columnNumber: 23
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1651,12 +1523,12 @@ function CartPage() {
                                                                                 className: "w-4 h-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 411,
+                                                                                lineNumber: 405,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 406,
+                                                                            lineNumber: 400,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1664,7 +1536,7 @@ function CartPage() {
                                                                             children: item.quantity
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 413,
+                                                                            lineNumber: 407,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -1675,64 +1547,64 @@ function CartPage() {
                                                                                 className: "w-4 h-4"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 419,
+                                                                                lineNumber: 413,
                                                                                 columnNumber: 29
                                                                             }, this)
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 414,
+                                                                            lineNumber: 408,
                                                                             columnNumber: 27
                                                                         }, this)
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 405,
+                                                                    lineNumber: 399,
                                                                     columnNumber: 25
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
-                                                                    onClick: ()=>removeItem(item.product_id),
+                                                                    onClick: ()=>removeItem(item.id),
                                                                     className: "text-red-600 hover:text-red-700 flex items-center gap-2",
                                                                     children: [
                                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$trash$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Trash2$3e$__["Trash2"], {
                                                                             className: "w-5 h-5"
                                                                         }, void 0, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 427,
+                                                                            lineNumber: 421,
                                                                             columnNumber: 27
                                                                         }, this),
                                                                         "Xóa"
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 423,
+                                                                    lineNumber: 417,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                            lineNumber: 404,
+                                                            lineNumber: 398,
                                                             columnNumber: 23
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                    lineNumber: 398,
+                                                    lineNumber: 392,
                                                     columnNumber: 21
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/cart/page.tsx",
-                                            lineNumber: 392,
+                                            lineNumber: 386,
                                             columnNumber: 19
                                         }, this)
                                     }, item.id, false, {
                                         fileName: "[project]/src/app/cart/page.tsx",
-                                        lineNumber: 391,
+                                        lineNumber: 385,
                                         columnNumber: 17
                                     }, this))
                             }, void 0, false, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 389,
+                                lineNumber: 383,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1748,14 +1620,14 @@ function CartPage() {
                                                         className: "w-5 h-5 text-blue-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 442,
+                                                        lineNumber: 436,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Thông tin giao hàng"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 441,
+                                                lineNumber: 435,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1768,7 +1640,7 @@ function CartPage() {
                                                                 children: "Họ và tên"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 448,
+                                                                lineNumber: 442,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1779,13 +1651,13 @@ function CartPage() {
                                                                 placeholder: "Nguyễn Văn A"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 451,
+                                                                lineNumber: 445,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 447,
+                                                        lineNumber: 441,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1795,7 +1667,7 @@ function CartPage() {
                                                                 children: "Số điện thoại"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 461,
+                                                                lineNumber: 455,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1806,13 +1678,13 @@ function CartPage() {
                                                                 placeholder: "0901234567"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 464,
+                                                                lineNumber: 458,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 460,
+                                                        lineNumber: 454,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1822,7 +1694,7 @@ function CartPage() {
                                                                 children: "Tỉnh/Thành phố"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 474,
+                                                                lineNumber: 468,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1835,7 +1707,7 @@ function CartPage() {
                                                                         children: "Chọn Tỉnh/Thành phố"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 482,
+                                                                        lineNumber: 476,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     provinces.map((province)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1843,19 +1715,19 @@ function CartPage() {
                                                                             children: province.ProvinceName
                                                                         }, province.ProvinceID, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 484,
+                                                                            lineNumber: 478,
                                                                             columnNumber: 25
                                                                         }, this))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 477,
+                                                                lineNumber: 471,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 473,
+                                                        lineNumber: 467,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1865,7 +1737,7 @@ function CartPage() {
                                                                 children: "Quận/Huyện"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 492,
+                                                                lineNumber: 486,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1879,7 +1751,7 @@ function CartPage() {
                                                                         children: "Chọn Quận/Huyện"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 501,
+                                                                        lineNumber: 495,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     districts.map((district)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1887,19 +1759,19 @@ function CartPage() {
                                                                             children: district.DistrictName
                                                                         }, district.DistrictID, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 503,
+                                                                            lineNumber: 497,
                                                                             columnNumber: 25
                                                                         }, this))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 495,
+                                                                lineNumber: 489,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 491,
+                                                        lineNumber: 485,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1909,7 +1781,7 @@ function CartPage() {
                                                                 children: "Phường/Xã"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 511,
+                                                                lineNumber: 505,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("select", {
@@ -1923,7 +1795,7 @@ function CartPage() {
                                                                         children: "Chọn Phường/Xã"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 520,
+                                                                        lineNumber: 514,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     wards.map((ward)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("option", {
@@ -1931,19 +1803,19 @@ function CartPage() {
                                                                             children: ward.WardName
                                                                         }, ward.WardCode, false, {
                                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                                            lineNumber: 522,
+                                                                            lineNumber: 516,
                                                                             columnNumber: 25
                                                                         }, this))
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 514,
+                                                                lineNumber: 508,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 510,
+                                                        lineNumber: 504,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1953,7 +1825,7 @@ function CartPage() {
                                                                 children: "Địa chỉ cụ thể"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 530,
+                                                                lineNumber: 524,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -1964,13 +1836,13 @@ function CartPage() {
                                                                 placeholder: "Số nhà, tên đường..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 533,
+                                                                lineNumber: 527,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 529,
+                                                        lineNumber: 523,
                                                         columnNumber: 19
                                                     }, this),
                                                     selectedDistrict > 0 && selectedWard && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1985,14 +1857,14 @@ function CartPage() {
                                                                         className: "w-5 h-5"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 551,
+                                                                        lineNumber: 545,
                                                                         columnNumber: 25
                                                                     }, this),
                                                                     calculatingFee ? 'Đang tính phí...' : 'Tính phí vận chuyển'
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 545,
+                                                                lineNumber: 539,
                                                                 columnNumber: 23
                                                             }, this),
                                                             shippingFee && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2005,18 +1877,18 @@ function CartPage() {
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 556,
+                                                                    lineNumber: 550,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 555,
+                                                                lineNumber: 549,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 544,
+                                                        lineNumber: 538,
                                                         columnNumber: 21
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2026,7 +1898,7 @@ function CartPage() {
                                                                 children: "Phương thức thanh toán"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 565,
+                                                                lineNumber: 559,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2044,7 +1916,7 @@ function CartPage() {
                                                                                 className: "w-4 h-4 text-blue-600"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 570,
+                                                                                lineNumber: 564,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2055,7 +1927,7 @@ function CartPage() {
                                                                                         children: "💵 Thanh toán khi nhận hàng (COD)"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 579,
+                                                                                        lineNumber: 573,
                                                                                         columnNumber: 27
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2063,123 +1935,121 @@ function CartPage() {
                                                                                         children: "Thanh toán bằng tiền mặt khi nhận hàng"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 580,
+                                                                                        lineNumber: 574,
                                                                                         columnNumber: 27
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 578,
+                                                                                lineNumber: 572,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 569,
+                                                                        lineNumber: 563,
                                                                         columnNumber: 23
                                                                     }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                        className: "flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors",
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center p-4 border border-gray-200 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                                 type: "radio",
                                                                                 name: "payment_method",
                                                                                 value: "bank_transfer",
-                                                                                checked: paymentMethod === 'bank_transfer',
-                                                                                onChange: (e)=>setPaymentMethod(e.target.value),
-                                                                                className: "w-4 h-4 text-blue-600"
+                                                                                disabled: true,
+                                                                                className: "w-4 h-4 text-gray-400"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 585,
+                                                                                lineNumber: 579,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                 className: "ml-3",
                                                                                 children: [
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "font-medium text-gray-900",
+                                                                                        className: "font-medium text-gray-500",
                                                                                         children: "🏦 Chuyển khoản ngân hàng"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 594,
+                                                                                        lineNumber: 587,
                                                                                         columnNumber: 27
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "text-sm text-gray-500",
-                                                                                        children: "Chuyển khoản qua ngân hàng"
+                                                                                        className: "text-sm text-gray-400",
+                                                                                        children: "Tính năng đang phát triển"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 595,
+                                                                                        lineNumber: 588,
                                                                                         columnNumber: 27
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 593,
+                                                                                lineNumber: 586,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 584,
+                                                                        lineNumber: 578,
                                                                         columnNumber: 23
                                                                     }, this),
-                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
-                                                                        className: "flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors",
+                                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                                        className: "flex items-center p-4 border border-gray-200 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed",
                                                                         children: [
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
                                                                                 type: "radio",
                                                                                 name: "payment_method",
                                                                                 value: "e_wallet",
-                                                                                checked: paymentMethod === 'e_wallet',
-                                                                                onChange: (e)=>setPaymentMethod(e.target.value),
-                                                                                className: "w-4 h-4 text-blue-600"
+                                                                                disabled: true,
+                                                                                className: "w-4 h-4 text-gray-400"
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 600,
+                                                                                lineNumber: 593,
                                                                                 columnNumber: 25
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                                                 className: "ml-3",
                                                                                 children: [
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "font-medium text-gray-900",
+                                                                                        className: "font-medium text-gray-500",
                                                                                         children: "📱 Ví điện tử"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 609,
+                                                                                        lineNumber: 601,
                                                                                         columnNumber: 27
                                                                                     }, this),
                                                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                                        className: "text-sm text-gray-500",
-                                                                                        children: "Thanh toán qua ví điện tử (Momo, ZaloPay...)"
+                                                                                        className: "text-sm text-gray-400",
+                                                                                        children: "Tính năng đang phát triển"
                                                                                     }, void 0, false, {
                                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                                        lineNumber: 610,
+                                                                                        lineNumber: 602,
                                                                                         columnNumber: 27
                                                                                     }, this)
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                                lineNumber: 608,
+                                                                                lineNumber: 600,
                                                                                 columnNumber: 25
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 599,
+                                                                        lineNumber: 592,
                                                                         columnNumber: 23
                                                                     }, this)
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 568,
+                                                                lineNumber: 562,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 564,
+                                                        lineNumber: 558,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2189,7 +2059,7 @@ function CartPage() {
                                                                 children: "Ghi chú"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 617,
+                                                                lineNumber: 609,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("textarea", {
@@ -2200,25 +2070,25 @@ function CartPage() {
                                                                 placeholder: "Ghi chú thêm cho đơn hàng..."
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 620,
+                                                                lineNumber: 612,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 616,
+                                                        lineNumber: 608,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 446,
+                                                lineNumber: 440,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/cart/page.tsx",
-                                        lineNumber: 440,
+                                        lineNumber: 434,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2231,14 +2101,14 @@ function CartPage() {
                                                         className: "w-5 h-5 text-blue-600"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 634,
+                                                        lineNumber: 626,
                                                         columnNumber: 19
                                                     }, this),
                                                     "Tổng cộng"
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 633,
+                                                lineNumber: 625,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2251,20 +2121,20 @@ function CartPage() {
                                                                 children: "Tạm tính"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 640,
+                                                                lineNumber: 632,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                 children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$formatPrice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(subtotal)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 641,
+                                                                lineNumber: 633,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 639,
+                                                        lineNumber: 631,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2277,14 +2147,14 @@ function CartPage() {
                                                                         className: "w-4 h-4"
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                                        lineNumber: 646,
+                                                                        lineNumber: 638,
                                                                         columnNumber: 23
                                                                     }, this),
                                                                     "Phí vận chuyển"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 645,
+                                                                lineNumber: 637,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2293,25 +2163,25 @@ function CartPage() {
                                                                     children: "Đang tính..."
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 651,
+                                                                    lineNumber: 643,
                                                                     columnNumber: 25
                                                                 }, this) : shippingFee ? (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$formatPrice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(shippingFee.total) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                                     className: "text-sm text-gray-400",
                                                                     children: "Chọn địa chỉ"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 655,
+                                                                    lineNumber: 647,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                                lineNumber: 649,
+                                                                lineNumber: 641,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 644,
+                                                        lineNumber: 636,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -2323,7 +2193,7 @@ function CartPage() {
                                                                     children: "Tổng cộng"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 662,
+                                                                    lineNumber: 654,
                                                                     columnNumber: 23
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -2331,24 +2201,24 @@ function CartPage() {
                                                                     children: (0, __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$formatPrice$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["formatPrice"])(total)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/cart/page.tsx",
-                                                                    lineNumber: 663,
+                                                                    lineNumber: 655,
                                                                     columnNumber: 23
                                                                 }, this)
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/cart/page.tsx",
-                                                            lineNumber: 661,
+                                                            lineNumber: 653,
                                                             columnNumber: 21
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/cart/page.tsx",
-                                                        lineNumber: 660,
+                                                        lineNumber: 652,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 638,
+                                                lineNumber: 630,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -2358,7 +2228,7 @@ function CartPage() {
                                                 children: processingOrder ? 'Đang xử lý...' : 'Đặt hàng'
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 668,
+                                                lineNumber: 660,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -2366,42 +2236,42 @@ function CartPage() {
                                                 children: "Bằng cách đặt hàng, bạn đồng ý với điều khoản sử dụng"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/cart/page.tsx",
-                                                lineNumber: 676,
+                                                lineNumber: 668,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/cart/page.tsx",
-                                        lineNumber: 632,
+                                        lineNumber: 624,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/cart/page.tsx",
-                                lineNumber: 438,
+                                lineNumber: 432,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/cart/page.tsx",
-                        lineNumber: 387,
+                        lineNumber: 381,
                         columnNumber: 11
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/cart/page.tsx",
-                lineNumber: 371,
+                lineNumber: 365,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$src$2f$components$2f$Footer$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/src/app/cart/page.tsx",
-                lineNumber: 685,
+                lineNumber: 677,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/cart/page.tsx",
-        lineNumber: 368,
+        lineNumber: 362,
         columnNumber: 5
     }, this);
 }

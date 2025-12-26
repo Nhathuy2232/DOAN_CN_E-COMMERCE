@@ -1,7 +1,7 @@
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import env from '../../config/env';
-import userRepository, { UserRecord, UserRole } from '../../infrastructure/repositories/userRepository';
+import userRepository, { UserRecord, UserRole } from '../../infrastructure/repositories/userRepositoryImpl';
 
 export interface AuthTokens {
   accessToken: string;
@@ -26,7 +26,11 @@ class AuthService {
 
   private generateToken(user: UserRecord): AuthTokens {
     const payload = this.toUserPayload(user);
-    const accessToken = jwt.sign(payload, env.jwt.secret, { expiresIn: env.jwt.expiresIn });
+    const options: any = {};
+    if (env.jwt.expiresIn) {
+      options.expiresIn = env.jwt.expiresIn;
+    }
+    const accessToken = jwt.sign(payload, env.jwt.secret, options);
     return { accessToken };
   }
 

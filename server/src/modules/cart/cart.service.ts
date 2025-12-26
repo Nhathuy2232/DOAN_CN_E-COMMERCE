@@ -1,5 +1,5 @@
-import cartRepository from '../../infrastructure/repositories/cartRepository';
-import productRepository from '../../infrastructure/repositories/productRepository';
+import cartRepository from '../../infrastructure/repositories/cartRepositoryImpl';
+import productRepository from '../../infrastructure/repositories/productRepositoryImpl';
 
 class CartService {
   getCart(userId: number) {

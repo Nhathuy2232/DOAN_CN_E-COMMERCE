@@ -1,4 +1,4 @@
-import userRepository, { UserRecord } from '../../infrastructure/repositories/userRepository';
+import userRepository, { UserRecord } from '../../infrastructure/repositories/userRepositoryImpl';
 
 class UserService {
   list(): Promise<UserRecord[]> {

@@ -56,7 +56,7 @@ export function Banner() {
               <img
                 src={banner.image}
                 alt={banner.alt}
-                className="w-full h-[300px] object-cover"
+                className="w-full h-[400px] object-cover"
               />
             </div>
           ))}
@@ -82,9 +82,11 @@ export function Banner() {
             <button
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-2 h-2 rounded-full transition-all ${
-                currentSlide === index ? "bg-white w-6" : "bg-white/50"
-              }`}
+              className={
+                currentSlide === index
+                  ? "w-6 h-2 rounded-full transition-all bg-white"
+                  : "w-2 h-2 rounded-full transition-all bg-white/50"
+              }
             />
           ))}
         </div>

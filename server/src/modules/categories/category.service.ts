@@ -1,4 +1,4 @@
-import categoryRepository, { CategoryRecord } from '../../infrastructure/repositories/categoryRepository';
+import categoryRepository, { CategoryRecord } from '../../infrastructure/repositories/categoryRepositoryImpl';
 
 class CategoryService {
   async list(): Promise<CategoryRecord[]> {

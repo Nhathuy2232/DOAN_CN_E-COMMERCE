@@ -5,8 +5,8 @@ import morgan from 'morgan';
 import swaggerUi from 'swagger-ui-express';
 import env from './config/env';
 import swaggerSpec from './config/swagger';
-import routes from './api';
-import { errorHandler, notFoundHandler } from './interfaces/http/middlewares/errorHandler';
+import routes from './presentation/http/routes';
+import { errorHandler, notFoundHandler } from './presentation/http/middlewares/errorHandler';
 
 const app = express();
 

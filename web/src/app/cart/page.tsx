@@ -216,7 +216,6 @@ export default function CartPage() {
 
   const updateQuantity = async (itemId: number, newQuantity: number) => {
     if (newQuantity < 1) return;
-
     try {
       const token = localStorage.getItem('accessToken');
       const response = await fetch('http://localhost:4000/api/cart', {
@@ -225,12 +224,8 @@ export default function CartPage() {
           'Content-Type': 'application/json',
           'Authorization': `Bearer ${token}`,
         },
-        body: JSON.stringify({
-          product_id: cartItems.find(item => item.id === itemId)?.product_id,
-          quantity: newQuantity,
-        }),
+        body: JSON.stringify({ itemId, quantity: newQuantity }),
       });
-
       if (response.ok) {
         fetchCart();
       }
@@ -248,7 +243,6 @@ export default function CartPage() {
           'Authorization': `Bearer ${token}`,
         },
       });
-
       if (response.ok) {
         fetchCart();
       }
@@ -421,7 +415,7 @@ export default function CartPage() {
                         </div>
                         
                         <button
-                          onClick={() => removeItem(item.product_id)}
+                          onClick={() => removeItem(item.id)}
                           className="text-red-600 hover:text-red-700 flex items-center gap-2"
                         >
                           <Trash2 className="w-5 h-5" />
@@ -581,35 +575,33 @@ export default function CartPage() {
                         </div>
                       </label>
                       
-                      <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                      <div className="flex items-center p-4 border border-gray-200 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed">
                         <input
                           type="radio"
                           name="payment_method"
                           value="bank_transfer"
-                          checked={paymentMethod === 'bank_transfer'}
-                          onChange={(e) => setPaymentMethod(e.target.value as 'bank_transfer')}
-                          className="w-4 h-4 text-blue-600"
+                          disabled
+                          className="w-4 h-4 text-gray-400"
                         />
                         <div className="ml-3">
-                          <div className="font-medium text-gray-900">🏦 Chuyển khoản ngân hàng</div>
-                          <div className="text-sm text-gray-500">Chuyển khoản qua ngân hàng</div>
+                          <div className="font-medium text-gray-500">🏦 Chuyển khoản ngân hàng</div>
+                          <div className="text-sm text-gray-400">Tính năng đang phát triển</div>
                         </div>
-                      </label>
+                      </div>
                       
-                      <label className="flex items-center p-4 border border-gray-300 rounded-lg cursor-pointer hover:border-blue-500 transition-colors">
+                      <div className="flex items-center p-4 border border-gray-200 rounded-lg bg-gray-50 opacity-60 cursor-not-allowed">
                         <input
                           type="radio"
                           name="payment_method"
                           value="e_wallet"
-                          checked={paymentMethod === 'e_wallet'}
-                          onChange={(e) => setPaymentMethod(e.target.value as 'e_wallet')}
-                          className="w-4 h-4 text-blue-600"
+                          disabled
+                          className="w-4 h-4 text-gray-400"
                         />
                         <div className="ml-3">
-                          <div className="font-medium text-gray-900">📱 Ví điện tử</div>
-                          <div className="text-sm text-gray-500">Thanh toán qua ví điện tử (Momo, ZaloPay...)</div>
+                          <div className="font-medium text-gray-500">📱 Ví điện tử</div>
+                          <div className="text-sm text-gray-400">Tính năng đang phát triển</div>
                         </div>
-                      </label>
+                      </div>
                     </div>
                   </div>
 

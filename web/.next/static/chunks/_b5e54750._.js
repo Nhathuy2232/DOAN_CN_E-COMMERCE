@@ -11,11 +11,9 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/chevron-left.js [app-client] (ecmascript) <export default as ChevronLeft>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$sliders$2d$horizontal$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__SlidersHorizontal$3e$__ = __turbopack_context__.i("[project]/node_modules/lucide-react/dist/esm/icons/sliders-horizontal.js [app-client] (ecmascript) <export default as SlidersHorizontal>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/dist/client/app-dir/link.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2d$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/src/lib/api-client.ts [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 'use client';
-;
 ;
 ;
 ;
@@ -24,84 +22,72 @@ function FlashSalePage() {
     const [products, setProducts] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])([]);
     const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     const [timeLeft, setTimeLeft] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])({
-        hours: 3,
-        minutes: 29,
-        seconds: 51
+        hours: 0,
+        minutes: 0,
+        seconds: 0
     });
     const [sortBy, setSortBy] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])('default');
-    // Countdown timer
+    // Fetch flash sale products
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "FlashSalePage.useEffect": ()=>{
-            const timer = setInterval({
-                "FlashSalePage.useEffect.timer": ()=>{
-                    setTimeLeft({
-                        "FlashSalePage.useEffect.timer": (prev)=>{
-                            if (prev.seconds > 0) {
-                                return {
-                                    ...prev,
-                                    seconds: prev.seconds - 1
-                                };
-                            } else if (prev.minutes > 0) {
-                                return {
-                                    ...prev,
-                                    minutes: prev.minutes - 1,
-                                    seconds: 59
-                                };
-                            } else if (prev.hours > 0) {
-                                return {
-                                    hours: prev.hours - 1,
-                                    minutes: 59,
-                                    seconds: 59
-                                };
-                            }
-                            return prev;
-                        }
-                    }["FlashSalePage.useEffect.timer"]);
-                }
-            }["FlashSalePage.useEffect.timer"], 1000);
-            return ({
-                "FlashSalePage.useEffect": ()=>clearInterval(timer)
-            })["FlashSalePage.useEffect"];
-        }
-    }["FlashSalePage.useEffect"], []);
-    // Fetch products on sale
-    (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
-        "FlashSalePage.useEffect": ()=>{
-            async function fetchProducts() {
+            async function fetchFlashSales() {
                 try {
                     setLoading(true);
-                    const response = await __TURBOPACK__imported__module__$5b$project$5d2f$src$2f$lib$2f$api$2d$client$2e$ts__$5b$app$2d$client$5d$__$28$ecmascript$29$__["apiClient"].getProducts({
-                        limit: 100
-                    });
-                    if (response.success && response.data && response.data.products) {
-                        // Lọc các sản phẩm có giá sale
-                        const saleProducts = response.data.products.filter({
-                            "FlashSalePage.useEffect.fetchProducts.saleProducts": (p)=>p.sale_price && p.sale_price < p.price
-                        }["FlashSalePage.useEffect.fetchProducts.saleProducts"]);
-                        setProducts(saleProducts);
+                    const response = await fetch('http://localhost:4000/api/flash-sales/active');
+                    if (response.ok) {
+                        const result = await response.json();
+                        if (result.success && result.data) {
+                            setProducts(result.data);
+                            // Calculate time left based on the earliest end_time
+                            if (result.data.length > 0) {
+                                const earliestEnd = new Date(result.data[0].end_time);
+                                calculateTimeLeft(earliestEnd);
+                            }
+                        }
                     }
                 } catch (error) {
-                    console.error('Failed to fetch products:', error);
+                    console.error('Failed to fetch flash sales:', error);
                 } finally{
                     setLoading(false);
                 }
             }
-            fetchProducts();
+            fetchFlashSales();
         }
     }["FlashSalePage.useEffect"], []);
+    // Calculate time remaining
+    const calculateTimeLeft = (endTime)=>{
+        const interval = setInterval(()=>{
+            const now = new Date().getTime();
+            const end = endTime.getTime();
+            const distance = end - now;
+            if (distance < 0) {
+                clearInterval(interval);
+                setTimeLeft({
+                    hours: 0,
+                    minutes: 0,
+                    seconds: 0
+                });
+            } else {
+                setTimeLeft({
+                    hours: Math.floor(distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)),
+                    minutes: Math.floor(distance % (1000 * 60 * 60) / (1000 * 60)),
+                    seconds: Math.floor(distance % (1000 * 60) / 1000)
+                });
+            }
+        }, 1000);
+        return ()=>clearInterval(interval);
+    };
     // Sort products
     const sortedProducts = [
         ...products
     ].sort((a, b)=>{
         switch(sortBy){
             case 'price-asc':
-                return (a.sale_price || a.price) - (b.sale_price || b.price);
+                return a.discounted_price - b.discounted_price;
             case 'price-desc':
-                return (b.sale_price || b.price) - (a.sale_price || a.price);
+                return b.discounted_price - a.discounted_price;
             case 'discount':
-                const discountA = a.sale_price ? (a.price - a.sale_price) / a.price * 100 : 0;
-                const discountB = b.sale_price ? (b.price - b.sale_price) / b.price * 100 : 0;
-                return discountB - discountA;
+                return b.discount_percentage - a.discount_percentage;
             default:
                 return 0;
         }
@@ -124,20 +110,20 @@ function FlashSalePage() {
                                         className: "w-5 h-5"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 88,
+                                        lineNumber: 102,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                         children: "Trang chủ"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 89,
+                                        lineNumber: 103,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 87,
+                                lineNumber: 101,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -154,12 +140,12 @@ function FlashSalePage() {
                                                     d: "M13 2L3 14h8l-1 8 10-12h-8l1-8z"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 95,
+                                                    lineNumber: 109,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 94,
+                                                lineNumber: 108,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -169,7 +155,7 @@ function FlashSalePage() {
                                                         children: "GIẢM GIÁ SỐC"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 98,
+                                                        lineNumber: 112,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -177,19 +163,19 @@ function FlashSalePage() {
                                                         children: "Ưu đãi có hạn - Nhanh tay kẻo hết!"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 99,
+                                                        lineNumber: 113,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 97,
+                                                lineNumber: 111,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 93,
+                                        lineNumber: 107,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -202,12 +188,12 @@ function FlashSalePage() {
                                                     children: "KẾT THÚC TRONG"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 105,
+                                                    lineNumber: 119,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 104,
+                                                lineNumber: 118,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -221,7 +207,7 @@ function FlashSalePage() {
                                                                 children: String(timeLeft.hours).padStart(2, '0')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 109,
+                                                                lineNumber: 123,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -229,13 +215,13 @@ function FlashSalePage() {
                                                                 children: "Giờ"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 110,
+                                                                lineNumber: 124,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 108,
+                                                        lineNumber: 122,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -243,7 +229,7 @@ function FlashSalePage() {
                                                         children: ":"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 112,
+                                                        lineNumber: 126,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -254,7 +240,7 @@ function FlashSalePage() {
                                                                 children: String(timeLeft.minutes).padStart(2, '0')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 114,
+                                                                lineNumber: 128,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -262,13 +248,13 @@ function FlashSalePage() {
                                                                 children: "Phút"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 115,
+                                                                lineNumber: 129,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 113,
+                                                        lineNumber: 127,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -276,7 +262,7 @@ function FlashSalePage() {
                                                         children: ":"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 117,
+                                                        lineNumber: 131,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -287,7 +273,7 @@ function FlashSalePage() {
                                                                 children: String(timeLeft.seconds).padStart(2, '0')
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 119,
+                                                                lineNumber: 133,
                                                                 columnNumber: 21
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -295,47 +281,47 @@ function FlashSalePage() {
                                                                 children: "Giây"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 120,
+                                                                lineNumber: 134,
                                                                 columnNumber: 21
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 118,
+                                                        lineNumber: 132,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 107,
+                                                lineNumber: 121,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 103,
+                                        lineNumber: 117,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 92,
+                                lineNumber: 106,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                        lineNumber: 86,
+                        lineNumber: 100,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                    lineNumber: 85,
+                    lineNumber: 99,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                lineNumber: 84,
+                lineNumber: 98,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -355,7 +341,7 @@ function FlashSalePage() {
                                                 className: "w-5 h-5 text-gray-600"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 135,
+                                                lineNumber: 149,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -363,13 +349,13 @@ function FlashSalePage() {
                                                 children: "Sắp xếp theo:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 136,
+                                                lineNumber: 150,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 134,
+                                        lineNumber: 148,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -381,7 +367,7 @@ function FlashSalePage() {
                                                 children: "Mặc định"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 139,
+                                                lineNumber: 153,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -390,7 +376,7 @@ function FlashSalePage() {
                                                 children: "Giảm nhiều nhất"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 149,
+                                                lineNumber: 163,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -399,7 +385,7 @@ function FlashSalePage() {
                                                 children: "Giá thấp đến cao"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 159,
+                                                lineNumber: 173,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -408,19 +394,19 @@ function FlashSalePage() {
                                                 children: "Giá cao đến thấp"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                lineNumber: 169,
+                                                lineNumber: 183,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 138,
+                                        lineNumber: 152,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 133,
+                                lineNumber: 147,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -431,30 +417,30 @@ function FlashSalePage() {
                                         children: products.length
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                        lineNumber: 183,
+                                        lineNumber: 197,
                                         columnNumber: 15
                                     }, this),
                                     " sản phẩm đang giảm giá"
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 182,
+                                lineNumber: 196,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                        lineNumber: 132,
+                        lineNumber: 146,
                         columnNumber: 11
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                    lineNumber: 131,
+                    lineNumber: 145,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                lineNumber: 130,
+                lineNumber: 144,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -468,7 +454,7 @@ function FlashSalePage() {
                                 className: "inline-block animate-spin rounded-full h-12 w-12 border-4 border-orange-500 border-t-transparent"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 194,
+                                lineNumber: 208,
                                 columnNumber: 15
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -476,18 +462,18 @@ function FlashSalePage() {
                                 children: "Đang tải sản phẩm..."
                             }, void 0, false, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 195,
+                                lineNumber: 209,
                                 columnNumber: 15
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                        lineNumber: 193,
+                        lineNumber: 207,
                         columnNumber: 13
                     }, this)
                 }, void 0, false, {
                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                    lineNumber: 192,
+                    lineNumber: 206,
                     columnNumber: 11
                 }, this) : products.length === 0 ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                     className: "text-center py-20",
@@ -504,12 +490,12 @@ function FlashSalePage() {
                                 d: "M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                lineNumber: 201,
+                                lineNumber: 215,
                                 columnNumber: 15
                             }, this)
                         }, void 0, false, {
                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                            lineNumber: 200,
+                            lineNumber: 214,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -517,7 +503,7 @@ function FlashSalePage() {
                             children: "Chưa có sản phẩm giảm giá"
                         }, void 0, false, {
                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                            lineNumber: 203,
+                            lineNumber: 217,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -525,21 +511,19 @@ function FlashSalePage() {
                             children: "Vui lòng quay lại sau để không bỏ lỡ các ưu đãi hấp dẫn!"
                         }, void 0, false, {
                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                            lineNumber: 204,
+                            lineNumber: 218,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                    lineNumber: 199,
+                    lineNumber: 213,
                     columnNumber: 11
                 }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                     children: [
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4",
-                            children: sortedProducts.map((product)=>{
-                                const discountPercent = product.sale_price ? Math.round((product.price - product.sale_price) / product.price * 100) : 0;
-                                return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            children: sortedProducts.map((product)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                     href: "/products/".concat(product.product_id),
                                     className: "bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 group border border-gray-100",
                                     children: [
@@ -547,8 +531,8 @@ function FlashSalePage() {
                                             className: "relative overflow-hidden bg-gray-50",
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("img", {
-                                                    src: product.image_url || '/images/products/placeholder.jpg',
-                                                    alt: product.name,
+                                                    src: product.product_thumbnail || '/images/products/placeholder.jpg',
+                                                    alt: product.product_name,
                                                     className: "w-full aspect-square object-cover group-hover:scale-110 transition-transform duration-300",
                                                     onError: (e)=>{
                                                         const target = e.target;
@@ -556,48 +540,25 @@ function FlashSalePage() {
                                                     }
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 221,
+                                                    lineNumber: 230,
                                                     columnNumber: 23
                                                 }, this),
-                                                discountPercent > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "absolute top-2 right-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-lg shadow-lg",
                                                     children: [
                                                         "-",
-                                                        discountPercent,
+                                                        product.discount_percentage,
                                                         "%"
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 231,
-                                                    columnNumber: 25
-                                                }, this),
-                                                product.stock_quantity < 10 && product.stock_quantity > 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute top-2 left-2 bg-orange-500 text-white text-xs font-bold px-2 py-1 rounded",
-                                                    children: "Sắp hết"
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 236,
-                                                    columnNumber: 25
-                                                }, this),
-                                                product.stock_quantity === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                    className: "absolute inset-0 bg-black/50 flex items-center justify-center",
-                                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "bg-gray-800 text-white px-4 py-2 rounded-lg font-bold",
-                                                        children: "HẾT HÀNG"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 242,
-                                                        columnNumber: 27
-                                                    }, this)
-                                                }, void 0, false, {
-                                                    fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 241,
-                                                    columnNumber: 25
+                                                    lineNumber: 239,
+                                                    columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                                            lineNumber: 220,
+                                            lineNumber: 229,
                                             columnNumber: 21
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -605,60 +566,48 @@ function FlashSalePage() {
                                             children: [
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
                                                     className: "text-sm text-gray-800 line-clamp-2 mb-2 h-10 group-hover:text-orange-600 transition-colors",
-                                                    children: product.name
+                                                    children: product.product_name
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 249,
+                                                    lineNumber: 244,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                     className: "space-y-1",
-                                                    children: product.sale_price ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
-                                                        children: [
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "flex items-baseline gap-2",
-                                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                                    className: "text-orange-600 text-lg font-bold",
-                                                                    children: [
-                                                                        product.sale_price.toLocaleString('vi-VN'),
-                                                                        "₫"
-                                                                    ]
-                                                                }, void 0, true, {
-                                                                    fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                    lineNumber: 256,
-                                                                    columnNumber: 31
-                                                                }, this)
-                                                            }, void 0, false, {
-                                                                fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 255,
-                                                                columnNumber: 29
-                                                            }, this),
-                                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                                className: "text-gray-400 text-sm line-through",
+                                                    children: [
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "flex items-baseline gap-2",
+                                                            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                                className: "text-orange-600 text-lg font-bold",
                                                                 children: [
-                                                                    product.price.toLocaleString('vi-VN'),
+                                                                    product.discounted_price.toLocaleString('vi-VN'),
                                                                     "₫"
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                                lineNumber: 260,
-                                                                columnNumber: 29
+                                                                lineNumber: 249,
+                                                                columnNumber: 27
                                                             }, this)
-                                                        ]
-                                                    }, void 0, true) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                        className: "text-orange-600 text-lg font-bold",
-                                                        children: [
-                                                            product.price.toLocaleString('vi-VN'),
-                                                            "₫"
-                                                        ]
-                                                    }, void 0, true, {
-                                                        fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 265,
-                                                        columnNumber: 27
-                                                    }, this)
-                                                }, void 0, false, {
+                                                        }, void 0, false, {
+                                                            fileName: "[project]/src/app/flash-sale/page.tsx",
+                                                            lineNumber: 248,
+                                                            columnNumber: 25
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "text-gray-400 text-sm line-through",
+                                                            children: [
+                                                                product.product_price.toLocaleString('vi-VN'),
+                                                                "₫"
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/src/app/flash-sale/page.tsx",
+                                                            lineNumber: 253,
+                                                            columnNumber: 25
+                                                        }, this)
+                                                    ]
+                                                }, void 0, true, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 252,
+                                                    lineNumber: 247,
                                                     columnNumber: 23
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -676,35 +625,34 @@ function FlashSalePage() {
                                                             ]
                                                         }, void 0, true, {
                                                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                            lineNumber: 274,
+                                                            lineNumber: 261,
                                                             columnNumber: 27
                                                         }, this)
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                        lineNumber: 273,
+                                                        lineNumber: 260,
                                                         columnNumber: 25
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                                    lineNumber: 272,
+                                                    lineNumber: 259,
                                                     columnNumber: 23
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                                            lineNumber: 248,
+                                            lineNumber: 243,
                                             columnNumber: 21
                                         }, this)
                                     ]
                                 }, product.product_id, true, {
                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                    lineNumber: 215,
+                                    lineNumber: 224,
                                     columnNumber: 19
-                                }, this);
-                            })
+                                }, this))
                         }, void 0, false, {
                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                            lineNumber: 208,
+                            lineNumber: 222,
                             columnNumber: 13
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -715,7 +663,7 @@ function FlashSalePage() {
                                     children: "🔥 DEAL SỐC TRONG NGÀY 🔥"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                    lineNumber: 290,
+                                    lineNumber: 276,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -723,30 +671,30 @@ function FlashSalePage() {
                                     children: "Miễn phí vận chuyển cho đơn hàng từ 500.000₫ • Giảm thêm 100.000₫ cho đơn từ 2.000.000₫"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/flash-sale/page.tsx",
-                                    lineNumber: 291,
+                                    lineNumber: 277,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/flash-sale/page.tsx",
-                            lineNumber: 289,
+                            lineNumber: 275,
                             columnNumber: 13
                         }, this)
                     ]
                 }, void 0, true)
             }, void 0, false, {
                 fileName: "[project]/src/app/flash-sale/page.tsx",
-                lineNumber: 190,
+                lineNumber: 204,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/flash-sale/page.tsx",
-        lineNumber: 82,
+        lineNumber: 96,
         columnNumber: 5
     }, this);
 }
-_s(FlashSalePage, "XjkpPGkyJKCBQdlBI0Qkpsmb4z4=");
+_s(FlashSalePage, "1kkAnC6Q1066T/pQY5vRQW62PCg=");
 _c = FlashSalePage;
 var _c;
 __turbopack_context__.k.register(_c, "FlashSalePage");

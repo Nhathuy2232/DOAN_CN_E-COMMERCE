@@ -4,62 +4,16 @@ import { useState, useEffect } from "react";
 import { ChevronRight } from "lucide-react";
 import Link from "next/link";
 
-const flashSaleProducts = [
-  {
-    id: 1,
-    image: "/images/products/can-cau-carbon-pro.jpg",
-    name: "Cần Câu Carbon",
-    price: "₫1,990,000",
-    originalPrice: "₫3,990,000",
-    discount: "-50%",
-    sold: 45
-  },
-  {
-    id: 2,
-    image: "/images/products/may-cau-shimano.jpg",
-    name: "Máy Câu Shimano",
-    price: "₫2,490,000",
-    originalPrice: "₫4,990,000",
-    discount: "-50%",
-    sold: 67
-  },
-  {
-    id: 3,
-    image: "/images/products/day-pe-8-loi.jpg",
-    name: "Dây PE 8 Lõi",
-    price: "₫390,000",
-    originalPrice: "₫790,000",
-    discount: "-50%",
-    sold: 89
-  },
-  {
-    id: 4,
-    image: "/images/products/luoi-cau-assorted.jpg",
-    name: "Lưỡi Câu Nhật",
-    price: "₫149,000",
-    originalPrice: "₫299,000",
-    discount: "-50%",
-    sold: 34
-  },
-  {
-    id: 5,
-    image: "/images/products/moi-mem-silicon.jpg",
-    name: "Mồi Giả Silicone",
-    price: "₫79,000",
-    originalPrice: "₫159,000",
-    discount: "-50%",
-    sold: 78
-  },
-  {
-    id: 6,
-    image: "/images/products/hop-do-nghe.jpg",
-    name: "Hộp Đựng Đồ 5 Tầng",
-    price: "₫329,000",
-    originalPrice: "₫659,000",
-    discount: "-50%",
-    sold: 56
-  }
-];
+interface FlashSaleProduct {
+  product_id: number;
+  product_name: string;
+  product_price: number;
+  product_thumbnail: string;
+  discount_percentage: number;
+  discounted_price: number;
+  flash_sale_quantity: number;
+  sold_quantity: number;
+}
 
 export function FlashSale() {
   const [timeLeft, setTimeLeft] = useState({
@@ -67,6 +21,8 @@ export function FlashSale() {
     minutes: 30,
     seconds: 30
   });
+  const [products, setProducts] = useState<FlashSaleProduct[]>([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -83,6 +39,40 @@ export function FlashSale() {
     }, 1000);
     return () => clearInterval(timer);
   }, []);
+
+  useEffect(() => {
+    fetchFlashSaleProducts();
+  }, []);
+
+  const fetchFlashSaleProducts = async () => {
+    try {
+      const response = await fetch('http://localhost:4000/api/flash-sales/active');
+      if (response.ok) {
+        const data = await response.json();
+        if (data.success) {
+          setProducts(data.data.slice(0, 6)); // Lấy 6 sản phẩm đầu tiên
+        }
+      }
+    } catch (error) {
+      console.error('Error fetching flash sale products:', error);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  if (loading) {
+    return (
+      <div className="container mx-auto px-4 py-4">
+        <div className="bg-white rounded-lg shadow-sm overflow-hidden p-8">
+          <div className="text-center text-gray-500">Đang tải...</div>
+        </div>
+      </div>
+    );
+  }
+
+  if (products.length === 0) {
+    return null;
+  }
 
   return (
     <div className="container mx-auto px-4 py-4">
@@ -121,33 +111,39 @@ export function FlashSale() {
         {/* Products */}
         <div className="p-4">
           <div className="grid grid-cols-6 gap-2">
-            {flashSaleProducts.map((product) => (
+            {products.map((product) => (
               <Link
-                key={product.id}
-                href={`/products/${product.id}` as any}
+                key={product.product_id}
+                href={`/products/${product.product_id}` as any}
                 className="border border-gray-100 rounded-sm hover:shadow-md transition-shadow overflow-hidden group"
               >
                 <div className="relative overflow-hidden bg-gray-50">
                   <img
-                    src={product.image}
-                    alt={product.name}
+                    src={product.product_thumbnail || '/images/products/placeholder.jpg'}
+                    alt={product.product_name}
                     className="w-full aspect-square object-cover group-hover:scale-105 transition-transform"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.src = '/images/products/placeholder.jpg';
+                    }}
                   />
                   <div className="absolute top-0 right-0 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-bl">
-                    {product.discount}
+                    -{product.discount_percentage}%
                   </div>
                 </div>
                 <div className="p-2">
-                  <h3 className="text-xs text-gray-700 line-clamp-2 mb-1 h-8">{product.name}</h3>
+                  <h3 className="text-xs text-gray-700 line-clamp-2 mb-1 h-8">{product.product_name}</h3>
                   <div className="flex items-center justify-center gap-1 mb-2">
-                    <span className="text-primary-600 text-lg font-bold">{product.price}</span>
+                    <span className="text-primary-600 text-lg font-bold">
+                      {product.discounted_price.toLocaleString('vi-VN')}₫
+                    </span>
                   </div>
                   <div className="bg-orange-500 rounded-full overflow-hidden h-4">
                     <div 
                       className="bg-gradient-to-r from-yellow-300 to-orange-400 h-full flex items-center justify-center text-[10px] text-white font-bold"
-                      style={{ width: `${Math.min(product.sold, 100)}%` }}
+                      style={{ width: `${Math.min((product.sold_quantity / product.flash_sale_quantity) * 100, 100)}%` }}
                     >
-                      ĐÃ BÁN{product.sold}
+                      ĐÃ BÁN {product.sold_quantity}
                     </div>
                   </div>
                 </div>
@@ -159,3 +155,4 @@ export function FlashSale() {
     </div>
   );
 }
+

@@ -2,7 +2,7 @@ import env from '../../config/env';
 import productRepository, {
   ProductFilter,
   ProductRecord,
-} from '../../infrastructure/repositories/productRepository';
+} from '../../infrastructure/repositories/productRepositoryImpl';
 
 class ProductService {
   async list(filter: ProductFilter = {}): Promise<{

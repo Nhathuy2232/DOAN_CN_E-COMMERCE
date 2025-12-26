@@ -17,7 +17,7 @@ const router = Router();
  */
 router.get('/product/:productId', async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const productId = parseInt(req.params.productId);
+    const productId = parseInt(req.params.productId || '0');
     const limit = parseInt(req.query.limit as string) || 10;
     const offset = parseInt(req.query.offset as string) || 0;
 
@@ -44,7 +44,7 @@ router.get('/product/:productId', async (req: Request, res: Response, next: Next
  */
 router.get('/my-review/:productId', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const productId = parseInt(req.params.productId);
+    const productId = parseInt(req.params.productId || '0');
     const userId = req.user!.id;
 
     const review = await reviewRepository.getUserReview(userId, productId);
@@ -115,7 +115,7 @@ router.post('/', authenticate, async (req: Request, res: Response, next: NextFun
  */
 router.put('/:id', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const reviewId = parseInt(req.params.id);
+    const reviewId = parseInt(req.params.id || '0');
     const userId = req.user!.id;
     const { rating, comment } = req.body;
 
@@ -153,7 +153,7 @@ router.put('/:id', authenticate, async (req: Request, res: Response, next: NextF
  */
 router.delete('/:id', authenticate, async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const reviewId = parseInt(req.params.id);
+    const reviewId = parseInt(req.params.id || '0');
     const userId = req.user!.id;
 
     const deleted = await reviewRepository.delete(reviewId, userId);

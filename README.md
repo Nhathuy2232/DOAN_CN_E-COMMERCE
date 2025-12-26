@@ -1,13 +1,13 @@
-# 🎣 Fishing Shop E-Commerce Platform
+# 🎣 Hệ Thống Thương Mại Điện Tử - Cửa Hàng Dụng Cụ Câu Cá
 
-Hệ thống thương mại điện tử chuyên bán dụng cụ câu cá được xây dựng với Next.js 15 và Node.js/Express. 
+Nền tảng thương mại điện tử chuyên nghiệp cho cửa hàng dụng cụ câu cá, được xây dựng với Next.js 15, Node.js/Express và Clean Architecture.
 
 ## 📋 Mục lục
 
 - [Giới thiệu](#giới-thiệu)
 - [Tính năng](#tính-năng)
 - [Công nghệ sử dụng](#công-nghệ-sử-dụng)
-- [Cấu trúc dự án](#cấu-trúc-dự-án)
+- [Kiến trúc](#kiến-trúc)
 - [Cài đặt](#cài-đặt)
 - [Sử dụng](#sử-dụng)
 - [API Documentation](#api-documentation)
@@ -17,37 +17,49 @@ Hệ thống thương mại điện tử chuyên bán dụng cụ câu cá đư�
 
 ## 🎯 Giới thiệu
 
-Dự án xây dựng một nền tảng thương mại điện tử hoàn chỉnh cho cửa hàng dụng cụ câu cá, bao gồm: 
-- Website khách hàng (Customer-facing)
-- Admin Dashboard quản trị
-- RESTful API Backend
-- Tích hợp thanh toán và vận chuyển
+Dự án xây dựng một nền tảng thương mại điện tử hoàn chỉnh cho cửa hàng dụng cụ câu cá, áp dụng Clean Architecture để đảm bảo: 
+- **Dễ bảo trì**: Code có cấu trúc rõ ràng, dễ đọc và dễ sửa
+- **Dễ mở rộng**: Thêm tính năng mới không ảnh hưởng logic hiện tại
+- **Dễ kiểm thử**: Các layer độc lập, dễ viết unit test
+- **Độc lập framework**: Business logic không phụ thuộc vào framework
+
+Hệ thống bao gồm:
+- Website khách hàng (Customer-facing) - Next.js 15
+- Admin Dashboard quản trị - Next.js 15
+- RESTful API Backend - Node.js/Express với Clean Architecture
+- Tích hợp thanh toán và vận chuyển GHN
 
 ## ✨ Tính năng
 
-### Khách hàng (Customer)
-- 🔐 Đăng ký/Đăng nhập với JWT Authentication
-- 🛍️ Xem danh sách sản phẩm với phân trang, tìm kiếm, lọc theo danh mục
-- 🛒 Giỏ hàng (Add, Update, Remove)
-- 💳 Đặt hàng và thanh toán (COD, Banking)
-- 📦 Theo dõi đơn hàng
-- 📝 Đọc blog/bài viết về kỹ thuật câu cá
+### 🛍️ Dành cho Khách hàng
+- 🔐 Xác thực người dùng với JWT
+- 🛍️ Duyệt và tìm kiếm sản phẩm
+- 🛒 Quản lý giỏ hàng (Thêm, Sửa, Xóa)
+- 💳 Đặt hàng và thanh toán (COD)
+- 📦 Theo dõi trạng thái đơn hàng
+- 📝 Đọc blog về kỹ thuật câu cá
+- ⚡ Sản phẩm giảm giá sốc (Flash Sale)
 - 👤 Quản lý thông tin cá nhân
+- 🗺️ Tích hợp Google Maps (trang giới thiệu)
+- 💬 Trang hỗ trợ khách hàng
 
-### Quản trị viên (Admin)
-- 📊 Dashboard thống kê (Doanh thu, Đơn hàng, Sản phẩm)
-- 📦 Quản lý sản phẩm (CRUD)
-- 🏷️ Quản lý danh mục
-- 📋 Quản lý đơn hàng
-- ✍️ Quản lý blog/bài viết
-- 🖼️ Upload hình ảnh
+### 👨‍💼 Dành cho Quản trị viên
+- 📊 Dashboard thống kê tổng quan
+- 📦 Quản lý sản phẩm (Tạo, Sửa, Xóa)
+- 🏷️ Quản lý danh mục sản phẩm
+- 📋 Quản lý đơn hàng và trạng thái
+- ✍️ Quản lý blog và bài viết
+- 🖼️ Upload và quản lý hình ảnh
 - 👥 Quản lý người dùng
+- ⚡ Quản lý Flash Sale
 
-### Tính năng khác
-- 🚚 Tích hợp GHN API (Giao Hàng Nhanh)
-- 🔍 Tìm kiếm sản phẩm nâng cao
-- 📱 Responsive design
-- 🌐 Multi-language support (Tiếng Việt)
+### 🚀 Tính năng nổi bật
+- 🚚 Tích hợp API Giao Hàng Nhanh (GHN)
+- 📧 Gửi email tự động khi đặt hàng
+- 🔍 Tìm kiếm và lọc sản phẩm nâng cao
+- 📱 Thiết kế responsive trên mọi thiết bị
+- 🌐 Giao diện hoàn toàn tiếng Việt
+- 🏗️ Clean Architecture cho backend
 
 ## 🛠️ Công nghệ sử dụng
 

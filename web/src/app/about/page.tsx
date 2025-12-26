@@ -147,65 +147,84 @@ export default function AboutPage() {
       {/* Contact Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gray-900 mb-12">
               Thông Tin Liên Hệ
             </h2>
             <div className="grid md:grid-cols-2 gap-8">
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <MapPin className="w-6 h-6 text-blue-600" />
+              <div className="space-y-6">
+                <div className="bg-white rounded-lg shadow-md p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <MapPin className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Địa Chỉ</h3>
+                      <p className="text-gray-600">
+                        123 Đường Nguyễn Văn Linh, Quận 7<br />
+                        TP. Hồ Chí Minh, Việt Nam
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Địa Chỉ</h3>
-                    <p className="text-gray-600">
-                      123 Đường Nguyễn Văn Linh, Quận 7<br />
-                      TP. Hồ Chí Minh, Việt Nam
-                    </p>
+                </div>
+                <div className="bg-white rounded-lg shadow-md p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <Phone className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Điện Thoại</h3>
+                      <p className="text-gray-600">
+                        Hotline: 0123 456 789<br />
+                        Zalo/Viber: 0987 654 321
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg shadow-md p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <Mail className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
+                      <p className="text-gray-600">
+                        info@canthushop.vn<br />
+                        support@canthushop.vn
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white rounded-lg shadow-md p-6">
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <Clock className="w-6 h-6 text-blue-600" />
+                    </div>
+                    <div>
+                      <h3 className="font-semibold text-gray-900 mb-2">Giờ Mở Cửa</h3>
+                      <p className="text-gray-600">
+                        Thứ 2 - Thứ 7: 8:00 - 20:00<br />
+                        Chủ Nhật: 9:00 - 18:00
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+              
+              {/* Google Maps */}
               <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <Phone className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Điện Thoại</h3>
-                    <p className="text-gray-600">
-                      Hotline: 0123 456 789<br />
-                      Zalo/Viber: 0987 654 321
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <Mail className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Email</h3>
-                    <p className="text-gray-600">
-                      info@canthushop.vn<br />
-                      support@canthushop.vn
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div className="bg-white rounded-lg shadow-md p-6">
-                <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0">
-                    <Clock className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-gray-900 mb-2">Giờ Mở Cửa</h3>
-                    <p className="text-gray-600">
-                      Thứ 2 - Thứ 7: 8:00 - 20:00<br />
-                      Chủ Nhật: 9:00 - 18:00
-                    </p>
-                  </div>
+                <h3 className="font-semibold text-gray-900 mb-4 text-center">Vị Trí Cửa Hàng</h3>
+                <div className="rounded-lg overflow-hidden">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3735.66677070706!2d106.34394437479253!3d9.923451590178079!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0175ea296facb%3A0x55ded92e29068221!2zVHLGsOG7nW5nIMSQ4bqhaSBI4buNYyBUcsOgIFZpbmg!5e1!3m2!1svi!2s!4v1766731466417!5m2!1svi!2s" 
+                    width="100%" 
+                    height="500" 
+                    style={{ border: 0 }} 
+                    allowFullScreen 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
                 </div>
               </div>
             </div>

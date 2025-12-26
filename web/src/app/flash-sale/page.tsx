@@ -268,7 +268,6 @@ export default function FlashSalePage() {
                       </div>
                     </div>
                   </Link>
-                );
               ))}
             </div>
 
