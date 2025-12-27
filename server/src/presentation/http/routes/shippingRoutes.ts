@@ -200,6 +200,7 @@ router.post('/calculate-fee', async (req, res, next) => {
     const {
       serviceId,
       serviceTypeId,
+      fromDistrictId,
       toDistrictId,
       toWardCode,
       height,
@@ -219,8 +220,9 @@ router.post('/calculate-fee', async (req, res, next) => {
     }
 
     const result = await ghnService.calculateFeeAsync({
-      serviceId: serviceId || 53320,
-      serviceTypeId: serviceTypeId || 2,
+      serviceId: serviceId,
+      serviceTypeId: serviceTypeId,
+      fromDistrictId: fromDistrictId || 1572, // Default: Trà Vinh district
       toDistrictId,
       toWardCode,
       height: height || 15,

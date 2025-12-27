@@ -23,14 +23,13 @@ class WishlistRepository {
      * Lấy danh sách wishlist của user
      */
     async getByUser(userId) {
-        const [rows] = await database_1.default.query(`SELECT 
+        const [rows] = await database_1.default.query(`SELECT
         w.id,
         w.user_id,
         w.product_id,
         w.created_at,
         p.name as product_name,
         p.price,
-        p.thumbnail_url,
         p.stock_quantity
       FROM wishlists w
       INNER JOIN products p ON w.product_id = p.id

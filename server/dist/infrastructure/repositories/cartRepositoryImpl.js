@@ -18,7 +18,7 @@ class CartRepository {
     }
     async getItemsByUser(userId) {
         const cart = await this.getOrCreateCart(userId);
-        const [rows] = await database_1.default.query(`SELECT ci.*, p.name as product_name, p.price, p.thumbnail_url, p.stock_quantity
+        const [rows] = await database_1.default.query(`SELECT ci.*, p.name as product_name, p.price, p.stock_quantity
        FROM cart_items ci
        INNER JOIN products p ON p.id = ci.product_id
        WHERE ci.cart_id = ?

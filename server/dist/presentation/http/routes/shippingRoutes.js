@@ -197,7 +197,7 @@ router.post('/available-services', async (req, res, next) => {
 });
 router.post('/calculate-fee', async (req, res, next) => {
     try {
-        const { serviceId, serviceTypeId, toDistrictId, toWardCode, height, length, weight, width, insuranceValue, codFailedAmount, coupon, } = req.body;
+        const { serviceId, serviceTypeId, fromDistrictId, toDistrictId, toWardCode, height, length, weight, width, insuranceValue, codFailedAmount, coupon, } = req.body;
         if (!toDistrictId || !toWardCode || !weight) {
             return res.status(400).json({
                 success: false,
@@ -207,6 +207,7 @@ router.post('/calculate-fee', async (req, res, next) => {
         const result = await GHNServiceImpl_1.default.calculateFeeAsync({
             serviceId: serviceId || 53320,
             serviceTypeId: serviceTypeId || 2,
+            fromDistrictId: fromDistrictId || 1572, // Default: Trà Vinh district
             toDistrictId,
             toWardCode,
             height: height || 15,

@@ -32,6 +32,7 @@ interface GetWardRequest {
 interface CalculateFeeRequest {
     serviceId: number;
     serviceTypeId: number;
+    fromDistrictId: number;
     toDistrictId: number;
     toWardCode: string;
     height: number;

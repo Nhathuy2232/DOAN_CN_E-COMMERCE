@@ -61,7 +61,7 @@ class OrderRepository {
         if (!order) {
             return null;
         }
-        const [items] = await database_1.default.query(`SELECT oi.*, p.name as product_name, p.thumbnail_url
+        const [items] = await database_1.default.query(`SELECT oi.*, p.name as product_name
        FROM order_items oi
        INNER JOIN products p ON p.id = oi.product_id
        WHERE oi.order_id = ?`, [orderId]);
@@ -86,7 +86,7 @@ class OrderRepository {
             whereClause = 'WHERE status = ?';
             params.push(filters.status);
         }
-        const [rows] = await database_1.default.query(`SELECT o.*, u.full_name as user_name 
+        const [rows] = await database_1.default.query(`SELECT o.*, u.full_name as user_name, u.email as user_email
        FROM orders o 
        LEFT JOIN users u ON o.user_id = u.id 
        ${whereClause} 

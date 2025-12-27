@@ -7,7 +7,6 @@ export interface CartItemRecord {
     updated_at: Date;
     product_name?: string;
     price?: number;
-    thumbnail_url?: string | null;
     stock_quantity?: number;
 }
 export interface CartRecord {

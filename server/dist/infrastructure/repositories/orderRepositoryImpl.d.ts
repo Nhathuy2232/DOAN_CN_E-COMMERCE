@@ -25,7 +25,6 @@ export interface OrderItemRecord {
     price: number;
     created_at: Date;
     product_name?: string;
-    thumbnail_url?: string | null;
 }
 export interface OrderWithItems extends OrderRecord {
     items: OrderItemRecord[];

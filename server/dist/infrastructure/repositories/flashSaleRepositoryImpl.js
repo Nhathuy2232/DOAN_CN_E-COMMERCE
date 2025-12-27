@@ -46,11 +46,11 @@ class FlashSaleRepository {
         const offset = filter?.offset ?? 0;
         const whereClause = filter?.status ? `WHERE fs.status = ?` : '';
         const params = filter?.status ? [filter.status, limit, offset] : [limit, offset];
-        const [rows] = await database_1.default.query(`SELECT 
+        const [rows] = await database_1.default.query(`SELECT
         fs.*,
         p.name as product_name,
         p.price as product_price,
-        p.thumbnail_url as product_thumbnail,
+        '' as product_thumbnail,
         ROUND(p.price * (100 - fs.discount_percentage) / 100, 0) as discounted_price
        FROM flash_sales fs
        INNER JOIN products p ON fs.product_id = p.id

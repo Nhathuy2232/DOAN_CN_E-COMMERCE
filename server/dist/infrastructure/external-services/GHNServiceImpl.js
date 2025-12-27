@@ -143,6 +143,7 @@ class GHNService {
             const requestData = {
                 service_id: request.serviceId,
                 service_type_id: request.serviceTypeId,
+                from_district_id: request.fromDistrictId,
                 to_district_id: request.toDistrictId,
                 to_ward_code: request.toWardCode,
                 height: request.height,

@@ -6,7 +6,6 @@ interface WishlistItem extends RowDataPacket {
     created_at: Date;
     product_name?: string;
     price?: number;
-    thumbnail_url?: string;
     stock_quantity?: number;
 }
 declare class WishlistRepository {

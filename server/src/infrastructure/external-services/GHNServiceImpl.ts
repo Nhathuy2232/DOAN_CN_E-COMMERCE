@@ -42,6 +42,7 @@ interface GetWardRequest {
 interface CalculateFeeRequest {
   serviceId: number;
   serviceTypeId: number;
+  fromDistrictId: number;
   toDistrictId: number;
   toWardCode: string;
   height: number;
@@ -300,9 +301,32 @@ class GHNService {
    */
   async calculateFeeAsync(request: CalculateFeeRequest): Promise<GHNResponse<any>> {
     try {
+      let serviceId = request.serviceId;
+      let serviceTypeId = request.serviceTypeId;
+
+      // If serviceId is not provided, get available services first
+      if (!serviceId) {
+        const serviceResponse = await this.getServiceAsync({
+          fromDistrict: request.fromDistrictId,
+          toDistrict: request.toDistrictId,
+        });
+
+        if (serviceResponse.success && serviceResponse.data && serviceResponse.data.length > 0) {
+          serviceId = serviceResponse.data[0].service_id;
+          serviceTypeId = serviceResponse.data[0].service_type_id;
+        } else {
+          return {
+            success: false,
+            data: null,
+            message: 'No available shipping service for this route',
+          };
+        }
+      }
+
       const requestData = {
-        service_id: request.serviceId,
-        service_type_id: request.serviceTypeId,
+        service_id: serviceId,
+        service_type_id: serviceTypeId,
+        from_district_id: request.fromDistrictId,
         to_district_id: request.toDistrictId,
         to_ward_code: request.toWardCode,
         height: request.height,

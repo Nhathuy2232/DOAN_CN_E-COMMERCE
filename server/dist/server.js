@@ -11,13 +11,19 @@ const database_1 = __importDefault(require("./infrastructure/database"));
 const server = http_1.default.createServer(app_1.default);
 const bootstrap = async () => {
     try {
+        console.log('Attempting to connect to database...');
         const connection = await database_1.default.getConnection();
+        console.log('Database connection successful');
         connection.release();
+        console.log('Starting HTTP server on port', env_1.default.port);
         server.listen(env_1.default.port, () => {
+            console.log('HTTP server callback executed');
             logger_1.default.info(`API server running on http://localhost:${env_1.default.port}`);
         });
+        console.log('server.listen() called');
     }
     catch (error) {
+        console.error('Error in bootstrap:', error);
         logger_1.default.error({ error }, 'Failed to start server');
         process.exit(1);
     }
